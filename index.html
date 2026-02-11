@@ -38,15 +38,15 @@ p {
     line-height: 1.6;
 }
 
-/* FAIXA SUPERIOR (DIMINUÍDA) */
+/* FAIXA SUPERIOR */
 .topbar {
     background: white;
-    padding: 15px 20px; /* diminuída */
+    padding: 15px 20px;
     text-align: center;
 }
 
 .topbar img {
-    height: 45px; /* menor */
+    height: 45px;
 }
 
 /* HERO */
@@ -98,12 +98,14 @@ p {
     position: relative;
     text-align: center;
     margin-top: 60px;
-    animation: floatSmooth 6s ease-in-out infinite;
 }
 
+/* NOVA ANIMAÇÃO MAIS FLUTUANTE */
 .mockup img {
     width: 320px;
     max-width: 100%;
+    animation: floatAdvanced 5s ease-in-out infinite;
+    filter: drop-shadow(0 25px 35px rgba(0,0,0,0.35));
 }
 
 /* CARDS FLUTUANTES */
@@ -118,13 +120,11 @@ p {
     white-space: nowrap;
 }
 
-/* SUPERIOR ESQUERDO */
 .card-top-left {
     top: 5%;
     left: 8%;
 }
 
-/* INFERIOR DIREITO */
 .card-bottom-right {
     bottom: 8%;
     right: 5%;
@@ -212,10 +212,11 @@ footer {
     to {opacity:1; transform:translateY(0);}
 }
 
-@keyframes floatSmooth {
-    0% {transform: translateY(0px);}
-    50% {transform: translateY(-10px);}
-    100% {transform: translateY(0px);}
+/* ANIMAÇÃO MAIS SOFISTICADA */
+@keyframes floatAdvanced {
+    0%   { transform: translateY(0px) rotate(-6deg); }
+    50%  { transform: translateY(-18px) rotate(-4deg); }
+    100% { transform: translateY(0px) rotate(-6deg); }
 }
 
 /* RESPONSIVO */
@@ -243,12 +244,10 @@ footer {
 </head>
 <body>
 
-<!-- FAIXA SUPERIOR -->
 <div class="topbar">
     <img src="logo.png" alt="ComCristo Logo">
 </div>
 
-<!-- HERO -->
 <section class="hero">
     <div class="container">
         <h1>Viva a Palavra todos os dias</h1>
@@ -264,7 +263,6 @@ footer {
     </div>
 </section>
 
-<!-- FUNCIONALIDADES -->
 <section class="features">
     <div class="container">
         <h2>Funcionalidades do Aplicativo</h2>
@@ -292,7 +290,6 @@ footer {
     </div>
 </section>
 
-<!-- BENEFÍCIOS -->
 <section class="benefits">
     <div class="container">
         <h2>Por que usar o ComCristo?</h2>
@@ -315,7 +312,6 @@ footer {
     </div>
 </section>
 
-<!-- CTA FINAL -->
 <section class="cta">
     <div class="container">
         <h2>Em breve você poderá começar uma nova jornada!</h2>
