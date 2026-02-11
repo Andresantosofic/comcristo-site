@@ -8,249 +8,254 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
     font-family:'Poppins',sans-serif;
     background:#f5f7fa;
-    color:#1a1a1a;
     overflow-x:hidden;
 }
-section{padding:80px 20px;}
-.container{max-width:1100px;margin:auto;}
-h1,h2{font-weight:800;}
-p{line-height:1.6;}
 
 /* HEADER */
 .header{
     background:white;
-    padding:10px 0;
     text-align:center;
+    padding:12px 0;
 }
+
 .header img{
     height:55px;
 }
 
 /* HERO */
 .hero{
-    background:linear-gradient(135deg,#0f2f63,#1e5db8);
+    background:linear-gradient(135deg,#143d7a,#2e63c5);
     color:white;
     text-align:center;
+    padding:80px 20px 120px 20px;
     position:relative;
-    overflow:hidden;
 }
-.hero h1{font-size:38px;margin-bottom:20px;}
-.hero p{max-width:600px;margin:auto;opacity:0.9;}
-.btn-primary{
-    margin-top:30px;
+
+.hero h1{
+    font-size:32px;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:600px;
+    margin:0 auto 30px auto;
+    opacity:0.9;
+}
+
+.btn{
     background:white;
-    color:#1e5db8;
-    padding:15px 35px;
+    color:#2e63c5;
+    padding:14px 35px;
     border-radius:40px;
     font-weight:700;
     display:inline-block;
+    margin-bottom:15px;
 }
-.hero small{display:block;margin-top:15px;opacity:0.8;}
+
+.hero small{
+    display:block;
+    opacity:0.8;
+}
 
 /* MOCKUP */
-.mockup-wrapper{
+.mockup-container{
     position:relative;
     margin-top:60px;
-    display:flex;
-    justify-content:center;
 }
+
 .mockup{
-    width:360px;
-    transform:rotate(-8deg);
-    animation:float 5s ease-in-out infinite;
+    width:280px;
+    animation:float 4s ease-in-out infinite;
 }
-.mockup img{width:100%;}
 
 /* CARDS FLUTUANTES */
-.floating-card{
+.float-card{
     position:absolute;
     background:white;
-    color:#1e5db8;
-    padding:12px 22px;
-    border-radius:30px;
+    color:#2e63c5;
+    padding:10px 20px;
+    border-radius:40px;
     font-weight:600;
-    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
     font-size:14px;
-}
-.card-left{
-    left:5%;
-    top:40%;
-}
-.card-right{
-    right:5%;
-    bottom:18%;
+    animation:floatCard 5s ease-in-out infinite;
 }
 
-/* FUNCIONALIDADES */
-.features{text-align:center;}
-.features h2{margin-bottom:40px;color:#0f2f63;}
-.card{
-    background:linear-gradient(135deg,#0f2f63,#1e5db8);
+.card-left{
+    left:10%;
+    top:45%;
+}
+
+.card-right{
+    right:10%;
+    bottom:28%; /* SUBIDO UM POUCO */
+}
+
+/* FEATURES */
+.features{
+    padding:80px 20px;
+    text-align:center;
+}
+
+.features h2{
+    font-size:26px;
+    margin-bottom:40px;
+    color:#143d7a;
+}
+
+.feature-card{
+    background:linear-gradient(135deg,#143d7a,#2e63c5);
     color:white;
-    padding:35px;
+    padding:30px;
     border-radius:25px;
-    margin-bottom:25px;
-    opacity:0;
+    margin-bottom:20px;
     transform:translateY(40px);
+    opacity:0;
     transition:0.6s;
 }
-.card.show{
-    opacity:1;
+
+.feature-card.show{
     transform:translateY(0);
-}
-.card i{
-    font-size:30px;
-    margin-bottom:15px;
-    display:block;
+    opacity:1;
 }
 
-/* BENEFÍCIOS */
-.benefits{text-align:center;}
-.benefits h2{margin-bottom:40px;color:#0f2f63;}
+/* BENEFITS (READICIONADO) */
+.benefits{
+    padding:80px 20px;
+    text-align:center;
+    background:#f5f7fa;
+}
+
+.benefits h2{
+    font-size:26px;
+    margin-bottom:40px;
+    color:#143d7a;
+}
+
 .benefit-box{
     background:white;
     padding:30px;
     border-radius:20px;
     margin-bottom:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.05);
-    opacity:0;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
     transform:translateY(40px);
+    opacity:0;
     transition:0.6s;
 }
+
 .benefit-box.show{
-    opacity:1;
     transform:translateY(0);
+    opacity:1;
 }
 
 /* CTA FINAL */
 .cta{
-    background:linear-gradient(135deg,#0f2f63,#1e5db8);
+    background:linear-gradient(135deg,#143d7a,#2e63c5);
     color:white;
     text-align:center;
-}
-.cta h2{font-size:32px;margin-bottom:20px;}
-
-/* FOOTER */
-footer{
-    background:#0f2f63;
-    color:white;
-    text-align:center;
-    padding:30px 20px;
-    font-size:14px;
+    padding:80px 20px;
 }
 
-/* ANIMAÇÃO */
+.cta h2{
+    font-size:28px;
+    margin-bottom:25px;
+}
+
+/* ANIMAÇÕES */
 @keyframes float{
-    0%{transform:rotate(-8deg) translateY(0px);}
-    50%{transform:rotate(-8deg) translateY(-18px);}
-    100%{transform:rotate(-8deg) translateY(0px);}
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-15px);}
+    100%{transform:translateY(0);}
+}
+
+@keyframes floatCard{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+    100%{transform:translateY(0);}
 }
 
 /* RESPONSIVO */
 @media(max-width:768px){
-    .mockup{width:300px;}
-    .card-left{left:0%;top:35%;}
-    .card-right{right:0%;bottom:15%;}
+    .card-left{
+        left:5%;
+    }
+    .card-right{
+        right:5%;
+    }
 }
 </style>
 </head>
+
 <body>
 
 <!-- HEADER -->
 <div class="header">
-    <img src="logo.png" alt="Logo ComCristo">
+    <img src="logo.png" alt="ComCristo">
 </div>
 
 <!-- HERO -->
 <section class="hero">
-    <div class="container">
-        <h1>Viva a Palavra todos os dias</h1>
-        <p>O ComCristo foi criado para ajudar você a criar constância espiritual com leveza, profundidade e propósito.</p>
-        <a class="btn-primary">Lançamento em breve!</a>
-        <small>Disponível apenas para Android no momento</small>
+    <h1>Viva a Palavra todos os dias</h1>
+    <p>O ComCristo foi criado para ajudar você a criar constância espiritual com leveza, profundidade e propósito.</p>
+    <a class="btn">Lançamento em breve!</a>
+    <small>Disponível apenas para Android no momento</small>
 
-        <div class="mockup-wrapper">
-            <div class="floating-card card-left">Devocional Completo</div>
-            <div class="floating-card card-right">Poderosa Palavra de Deus</div>
+    <div class="mockup-container">
+        <img src="mockup.png" class="mockup" alt="App ComCristo">
 
-            <div class="mockup">
-                <img src="mockup.png" alt="App ComCristo">
-            </div>
-        </div>
+        <div class="float-card card-left">Devocional Completo</div>
+        <div class="float-card card-right">Poderosa Palavra de Deus</div>
     </div>
 </section>
 
 <!-- FUNCIONALIDADES -->
 <section class="features">
-    <div class="container">
-        <h2>Funcionalidades do Aplicativo</h2>
+    <h2>Funcionalidades do Aplicativo</h2>
 
-        <div class="card">
-            <i>📖</i>
-            <h3>Versículo Diário</h3>
-            <p>A palavra de Deus todos os dias, com notificação no horário que você escolher.</p>
-        </div>
-
-        <div class="card">
-            <i>📝</i>
-            <h3>Devocional</h3>
-            <p>Devocional completo todos os dias para manter sua fé viva.</p>
-        </div>
-
-        <div class="card">
-            <i>📚</i>
-            <h3>Bíblia Sagrada</h3>
-            <p>Leitura organizada por livros e capítulos com marcação de versículos.</p>
-        </div>
-
-        <div class="card">
-            <i>⭐</i>
-            <h3>Favoritos</h3>
-            <p>Salve e organize versículos importantes para revisar depois.</p>
-        </div>
-    </div>
+    <div class="feature-card">Versículo Diário</div>
+    <div class="feature-card">Devocional</div>
+    <div class="feature-card">Bíblia Sagrada</div>
+    <div class="feature-card">Favoritos</div>
 </section>
 
-<!-- BENEFÍCIOS -->
+<!-- POR QUE USAR -->
 <section class="benefits">
-    <div class="container">
-        <h2>Por que usar o ComCristo?</h2>
+    <h2>Por que usar o ComCristo?</h2>
 
-        <div class="benefit-box">
-            <h3>Constância</h3>
-            <p>Ferramentas que ajudam você a manter disciplina espiritual diária.</p>
-        </div>
+    <div class="benefit-box">
+        <h3>Constância</h3>
+        <p>Ferramentas que ajudam você a manter disciplina espiritual diária.</p>
+    </div>
 
-        <div class="benefit-box">
-            <h3>Organização</h3>
-            <p>Seu progresso salvo e organizado dentro do aplicativo.</p>
-        </div>
+    <div class="benefit-box">
+        <h3>Organização</h3>
+        <p>Seu progresso salvo e organizado dentro do aplicativo.</p>
+    </div>
 
-        <div class="benefit-box">
-            <h3>Leveza</h3>
-            <p>Design minimalista e focado na Palavra.</p>
-        </div>
+    <div class="benefit-box">
+        <h3>Leveza</h3>
+        <p>Design minimalista e focado na Palavra.</p>
     </div>
 </section>
 
-<!-- CTA FINAL -->
+<!-- CTA -->
 <section class="cta">
-    <div class="container">
-        <h2>Em breve você poderá começar uma nova jornada!</h2>
-        <a class="btn-primary">Lançamento em breve</a>
-    </div>
+    <h2>Em breve você poderá começar uma nova jornada!</h2>
+    <a class="btn">Lançamento em breve</a>
 </section>
-
-<footer>
-    © 2026 ComCristo • Seu devocional diário
-</footer>
 
 <script>
-const elements = document.querySelectorAll('.card, .benefit-box');
+const elements = document.querySelectorAll('.feature-card, .benefit-box');
 
 function showOnScroll(){
     const trigger = window.innerHeight * 0.85;
@@ -261,7 +266,8 @@ function showOnScroll(){
         }
     });
 }
-window.addEventListener('scroll',showOnScroll);
+
+window.addEventListener('scroll', showOnScroll);
 showOnScroll();
 </script>
 
