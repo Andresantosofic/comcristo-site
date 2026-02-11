@@ -9,146 +9,147 @@
 
 <style>
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #f5f7fb;
-  color: #1a1a1a;
-  overflow-x: hidden;
+body{
+  font-family:'Poppins',sans-serif;
+  background:#ffffff;
+  overflow-x:hidden;
 }
 
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 40px 20px;
-  text-align: center;
+/* HEADER */
+
+.header{
+  background:#0d47ff;
+  padding:60px 20px 100px 20px;
+  text-align:center;
+  color:white;
+  position:relative;
 }
 
-.logo {
-  width: 150px;
-  margin-bottom: 30px;
-  animation: fadeDown 1s ease;
+.logo{
+  width:140px;
+  margin-bottom:20px;
 }
 
-h1 {
-  font-size: 36px;
-  font-weight: 700;
-  color: #0d47ff;
-  margin-bottom: 10px;
-  animation: fadeUp 1s ease;
+.header h1{
+  font-size:34px;
+  font-weight:700;
+  margin-bottom:10px;
 }
 
-.subtitle {
-  font-size: 18px;
-  color: #555;
-  margin-bottom: 40px;
-  animation: fadeUp 1.2s ease;
+.header p{
+  font-size:16px;
+  opacity:0.9;
 }
 
-.mockup {
-  width: 280px;
-  margin: 0 auto 50px;
-  animation: float 4s ease-in-out infinite;
+/* MOCKUP */
+
+.mockup{
+  width:300px;
+  margin: -80px auto 40px auto;
+  display:block;
+  animation:float 4s ease-in-out infinite;
 }
 
-.button-main {
-  display: inline-block;
-  background: #0d47ff;
-  color: #fff;
-  padding: 16px 40px;
-  border-radius: 40px;
-  font-weight: 600;
-  font-size: 16px;
-  text-decoration: none;
-  margin-bottom: 10px;
-  transition: 0.3s;
+/* BOTÃO */
+
+.botao{
+  display:inline-block;
+  background:white;
+  color:#0d47ff;
+  padding:15px 35px;
+  border-radius:40px;
+  font-weight:600;
+  margin-top:20px;
+  text-decoration:none;
+  transition:0.3s;
 }
 
-.button-main:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(13,71,255,0.3);
+.botao:hover{
+  transform:scale(1.05);
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
-.aviso {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 60px;
+.aviso{
+  font-size:13px;
+  margin-top:10px;
+  opacity:0.8;
 }
 
-.section {
-  margin-bottom: 80px;
+/* SEÇÃO */
+
+.section{
+  padding:60px 20px;
+  max-width:1100px;
+  margin:auto;
+  text-align:center;
 }
 
-.section h2 {
-  font-size: 28px;
-  color: #0d47ff;
-  margin-bottom: 40px;
+.section h2{
+  font-size:28px;
+  margin-bottom:40px;
+  color:#0d47ff;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+/* CARDS AZUIS */
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
 }
 
-.card {
-  background: #fff;
-  padding: 30px;
-  border-radius: 25px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-  transition: 0.4s;
-  animation: fadeUp 1s ease;
+.card{
+  background:#0d47ff;
+  padding:35px 25px;
+  border-radius:30px;
+  color:white;
+  transition:0.4s;
+  box-shadow:0 15px 35px rgba(13,71,255,0.3);
 }
 
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 45px rgba(13,71,255,0.4);
 }
 
-.card img {
-  width: 50px;
-  margin-bottom: 20px;
+.card img{
+  width:50px;
+  margin-bottom:20px;
 }
 
-.card h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: #0d47ff;
+.card h3{
+  font-size:18px;
+  margin-bottom:10px;
 }
 
-.card p {
-  font-size: 14px;
-  color: #555;
+.card p{
+  font-size:14px;
+  opacity:0.9;
 }
 
-footer {
-  margin-top: 80px;
-  padding: 20px;
-  font-size: 13px;
-  color: #888;
+/* FOOTER */
+
+footer{
+  background:#0d47ff;
+  color:white;
+  text-align:center;
+  padding:20px;
+  font-size:13px;
+  margin-top:60px;
 }
 
-/* ANIMAÇÕES */
+/* ANIMAÇÃO */
 
-@keyframes fadeUp {
-  from {opacity: 0; transform: translateY(30px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes fadeDown {
-  from {opacity: 0; transform: translateY(-30px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes float {
-  0% { transform: translateY(0px);}
-  50% { transform: translateY(-15px);}
-  100% { transform: translateY(0px);}
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-15px);}
+  100%{transform:translateY(0);}
 }
 
 </style>
@@ -156,55 +157,52 @@ footer {
 
 <body>
 
-<div class="container">
-
+<div class="header">
   <img src="logo.png" class="logo">
-
   <h1>Com Cristo</h1>
-  <p class="subtitle">Fortaleça sua fé todos os dias com a Palavra de Deus.</p>
+  <p>Fortaleça sua fé todos os dias.</p>
 
-  <img src="mockup.png" class="mockup">
-
-  <a href="#" class="button-main">Lançamento em breve</a>
-  <p class="aviso">Disponível apenas para Android no momento</p>
-
-  <div class="section">
-    <h2>Recursos do App</h2>
-
-    <div class="cards">
-
-      <div class="card">
-        <img src="biblia.png">
-        <h3>Bíblia Completa</h3>
-        <p>Leia todos os livros da Bíblia de forma organizada e intuitiva.</p>
-      </div>
-
-      <div class="card">
-        <img src="devocional.png">
-        <h3>Devocional Diário</h3>
-        <p>Receba mensagens inspiradoras todos os dias.</p>
-      </div>
-
-      <div class="card">
-        <img src="favoritos.png">
-        <h3>Versículos Favoritos</h3>
-        <p>Salve e destaque os versículos que tocam seu coração.</p>
-      </div>
-
-      <div class="card">
-        <img src="notificacao.png">
-        <h3>Notificação Diária</h3>
-        <p>Escolha o horário e receba o versículo do dia.</p>
-      </div>
-
-    </div>
-  </div>
-
-  <footer>
-    © 2026 Com Cristo • Todos os direitos reservados
-  </footer>
-
+  <a href="#" class="botao">Lançamento em breve</a>
+  <div class="aviso">Disponível apenas para Android no momento</div>
 </div>
+
+<img src="mockup.png" class="mockup">
+
+<div class="section">
+  <h2>Recursos do Aplicativo</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <img src="biblia.png">
+      <h3>Bíblia Completa</h3>
+      <p>Leia todos os livros da Bíblia organizados por capítulos.</p>
+    </div>
+
+    <div class="card">
+      <img src="devocional.png">
+      <h3>Devocional Diário</h3>
+      <p>Mensagens inspiradoras para fortalecer sua fé.</p>
+    </div>
+
+    <div class="card">
+      <img src="favoritos.png">
+      <h3>Versículos Favoritos</h3>
+      <p>Marque e destaque os versículos que tocaram seu coração.</p>
+    </div>
+
+    <div class="card">
+      <img src="notificacao.png">
+      <h3>Notificação Diária</h3>
+      <p>Escolha o horário e receba o versículo do dia.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  © 2026 Com Cristo • Todos os direitos reservados
+</footer>
 
 </body>
 </html>
