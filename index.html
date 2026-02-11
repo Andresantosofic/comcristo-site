@@ -5,213 +5,286 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ComCristo - Seu devocional diário</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background: #f4f6f9;
-    color: #1c1c1c;
+    font-family: 'Poppins', sans-serif;
+    background: #f5f7fa;
+    color: #1a1a1a;
+    overflow-x: hidden;
 }
 
-header {
-    background: #ffffff;
-    padding: 12px 0;
-    text-align: center;
+section {
+    padding: 80px 20px;
 }
 
-header img {
-    height: 40px;
+.container {
+    max-width: 1100px;
+    margin: auto;
 }
 
+h1, h2 {
+    font-weight: 800;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* HERO */
 .hero {
-    background: linear-gradient(180deg,#1f4fa3,#2e63b8);
+    background: linear-gradient(135deg, #0f2f63, #1e5db8);
     color: white;
     text-align: center;
-    padding: 60px 20px 140px;
     position: relative;
     overflow: hidden;
 }
 
 .hero h1 {
-    font-size: 28px;
+    font-size: 42px;
     margin-bottom: 20px;
+    animation: fadeUp 1s ease forwards;
 }
 
 .hero p {
-    font-size: 15px;
-    opacity: .9;
-    margin-bottom: 25px;
+    max-width: 600px;
+    margin: auto;
+    opacity: 0.9;
+    animation: fadeUp 1.4s ease forwards;
 }
 
-.btn {
+.btn-primary {
+    margin-top: 30px;
     background: white;
-    color: #1f4fa3;
-    padding: 12px 28px;
-    border-radius: 30px;
+    color: #1e5db8;
+    padding: 15px 35px;
+    border-radius: 40px;
+    font-weight: 700;
     display: inline-block;
-    font-weight: 600;
+    transition: 0.3s;
+    animation: fadeUp 1.8s ease forwards;
 }
 
-.phone-area {
-    position: relative;
-    margin-top: 40px;
+.btn-primary:hover {
+    transform: scale(1.05);
 }
 
-.phone-area img {
-    width: 260px;
-    transform: rotate(-18deg);
-    animation: float 4s ease-in-out infinite;
+.hero small {
+    display: block;
+    margin-top: 15px;
+    opacity: 0.8;
 }
 
-@keyframes float {
-    0%,100% { transform: rotate(-18deg) translateY(0px); }
-    50% { transform: rotate(-18deg) translateY(-10px); }
+/* MOCKUP */
+.mockup {
+    text-align: center;
+    margin-top: 60px;
+    animation: float 6s ease-in-out infinite;
 }
 
-.floating-card {
-    position: absolute;
-    background: white;
-    padding: 10px 18px;
-    border-radius: 25px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #1f4fa3;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+.mockup img {
+    width: 320px;
+    max-width: 100%;
 }
 
-.devocional-card {
-    top: 10%;
-    left: 5%;
-}
-
-.palavra-card {
-    bottom: 10%;
-    right: 5%;
-}
-
-.section {
-    padding: 60px 20px;
+/* CARDS */
+.features {
     text-align: center;
 }
 
-.section h2 {
-    font-size: 24px;
-    margin-bottom: 30px;
-    color: #1f3e73;
+.features h2 {
+    margin-bottom: 40px;
+    color: #0f2f63;
 }
 
-.feature-card {
-    background: linear-gradient(180deg,#1f4fa3,#2e63b8);
+.card {
+    background: linear-gradient(135deg, #0f2f63, #1e5db8);
     color: white;
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 35px;
+    border-radius: 25px;
+    margin-bottom: 25px;
+    transition: 0.4s;
+    opacity: 0;
+    transform: translateY(40px);
 }
 
-.feature-card i {
-    font-size: 20px;
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
     margin-bottom: 10px;
-    display: block;
 }
 
-.porque-card {
+/* BENEFÍCIOS */
+.benefits {
+    text-align: center;
+}
+
+.benefit-box {
     background: white;
-    padding: 25px;
+    padding: 30px;
     border-radius: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s;
 }
 
+.benefit-box.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* CTA FINAL */
+.cta {
+    background: linear-gradient(135deg, #0f2f63, #1e5db8);
+    color: white;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+/* FOOTER */
 footer {
-    background: #1f4fa3;
+    background: #0f2f63;
     color: white;
     text-align: center;
     padding: 30px 20px;
+    font-size: 14px;
 }
 
-@media(max-width:600px){
-    .phone-area img {
-        width: 240px;
+/* ANIMAÇÕES */
+@keyframes fadeUp {
+    from {opacity:0; transform:translateY(40px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+@keyframes float {
+    0% {transform: translateY(0px);}
+    50% {transform: translateY(-15px);}
+    100% {transform: translateY(0px);}
+}
+
+/* RESPONSIVO */
+@media(max-width:768px){
+    .hero h1 {
+        font-size: 28px;
     }
 }
 </style>
 </head>
-
 <body>
 
-<header>
-    <img src="logo.png" alt="ComCristo">
-</header>
-
+<!-- HERO -->
 <section class="hero">
-    <h1>Viva a Palavra todos os dias</h1>
-    <p>O ComCristo foi criado para ajudar você a criar constância espiritual com leveza, profundidade e propósito.</p>
-    <div class="btn">Lançamento em breve!</div>
+    <div class="container">
+        <h1>Viva a Palavra todos os dias</h1>
+        <p>O ComCristo foi criado para ajudar você a criar constância espiritual com leveza, profundidade e propósito.</p>
+        <a class="btn-primary">Lançamento em breve</a>
+        <small>Disponível apenas para Android no momento</small>
 
-    <div class="phone-area">
-        <div class="floating-card devocional-card">Devocional Completo</div>
-        <img src="mockup.png" alt="App ComCristo">
-        <div class="floating-card palavra-card">Poderosa Palavra de Deus</div>
+        <div class="mockup">
+            <img src="mockup.png" alt="App ComCristo">
+        </div>
     </div>
 </section>
 
-<section class="section">
-    <h2>Funcionalidades do Aplicativo</h2>
+<!-- FUNCIONALIDADES -->
+<section class="features">
+    <div class="container">
+        <h2>Funcionalidades do Aplicativo</h2>
 
-    <div class="feature-card">
-        📖
-        <h3>Versículo Diário</h3>
-        <p>A palavra de Deus todos os dias com notificação no horário que você escolher.</p>
-    </div>
+        <div class="card"> 
+            <h3>Versículo Diário</h3>
+            <p>A palavra de Deus todos os dias, com notificação no horário que você escolher.</p>
+        </div>
 
-    <div class="feature-card">
-        ✍
-        <h3>Devocional</h3>
-        <p>Devocional completo todos os dias para manter sua fé viva.</p>
-    </div>
+        <div class="card">
+            <h3>Devocional</h3>
+            <p>Devocional completo todos os dias para manter sua fé viva.</p>
+        </div>
 
-    <div class="feature-card">
-        📚
-        <h3>Bíblia Sagrada</h3>
-        <p>Leitura organizada por livros e capítulos com marcação de versículos.</p>
-    </div>
+        <div class="card">
+            <h3>Bíblia Sagrada</h3>
+            <p>Leitura organizada por livros e capítulos com marcação de versículos.</p>
+        </div>
 
-    <div class="feature-card">
-        ❤️
-        <h3>Favoritos</h3>
-        <p>Salve e organize versículos importantes para revisar depois.</p>
+        <div class="card">
+            <h3>Favoritos</h3>
+            <p>Salve e organize versículos importantes para revisar depois.</p>
+        </div>
+
     </div>
 </section>
 
-<section class="section">
-    <h2>Por que usar o ComCristo?</h2>
+<!-- BENEFÍCIOS -->
+<section class="benefits">
+    <div class="container">
+        <h2>Por que usar o ComCristo?</h2>
 
-    <div class="porque-card">
-        <h3>Constância</h3>
-        <p>Ferramentas que ajudam você a manter disciplina espiritual diária.</p>
+        <div class="benefit-box">
+            <h3>Constância</h3>
+            <p>Ferramentas que ajudam você a manter disciplina espiritual diária.</p>
+        </div>
+
+        <div class="benefit-box">
+            <h3>Organização</h3>
+            <p>Seu progresso salvo e organizado dentro do aplicativo.</p>
+        </div>
+
+        <div class="benefit-box">
+            <h3>Leveza</h3>
+            <p>Design minimalista e focado na Palavra.</p>
+        </div>
+
     </div>
+</section>
 
-    <div class="porque-card">
-        <h3>Organização</h3>
-        <p>Seu progresso salvo e organizado dentro do aplicativo.</p>
-    </div>
-
-    <div class="porque-card">
-        <h3>Leveza</h3>
-        <p>Design minimalista e focado na Palavra.</p>
+<!-- CTA FINAL -->
+<section class="cta">
+    <div class="container">
+        <h2>Em breve você poderá começar uma nova jornada!</h2>
+        <a class="btn-primary">Lançamento em breve</a>
     </div>
 </section>
 
 <footer>
-    © 2026 ComCristo - Seu devocional diário
+    © 2026 ComCristo • Seu devocional diário • Desenvolvido por André Santos
 </footer>
+
+<script>
+const elements = document.querySelectorAll('.card, .benefit-box');
+
+function showOnScroll(){
+    const trigger = window.innerHeight * 0.85;
+    elements.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if(top < trigger){
+            el.classList.add('show');
+        }
+    });
+}
+
+window.addEventListener('scroll', showOnScroll);
+showOnScroll();
+</script>
 
 </body>
 </html>
