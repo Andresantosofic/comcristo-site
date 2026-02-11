@@ -24,13 +24,13 @@ body{
 /* HEADER */
 header{
     background:white;
-    padding:12px 0; /* faixa menor */
+    padding:8px 0; /* faixa fina */
     text-align:center;
-    box-shadow:0 2px 8px rgba(0,0,0,0.05);
+    box-shadow:0 2px 6px rgba(0,0,0,0.05);
 }
 
 header img{
-    width:180px; /* mantém tamanho */
+    width:230px; /* logo maior */
 }
 
 /* HERO */
@@ -38,8 +38,9 @@ header img{
     background:linear-gradient(135deg,#0f2f63,#1e5db8);
     color:white;
     text-align:center;
-    padding:100px 20px 80px 20px;
+    padding:100px 20px 140px 20px;
     position:relative;
+    overflow:hidden;
 }
 
 .hero h1{
@@ -69,33 +70,61 @@ header img{
     transform:scale(1.05);
 }
 
-.hero small{
-    display:block;
-    margin-top:15px;
-    opacity:0.85;
+/* MOCKUP */
+.mockup-container{
+    position:relative;
+    margin-top:80px;
+    display:flex;
+    justify-content:center;
 }
 
-/* MOCKUP */
 .mockup{
-    margin-top:70px;
-    animation:floatPhone 5s ease-in-out infinite;
+    animation:floatPhone 6s ease-in-out infinite;
 }
 
 .mockup img{
-    width:350px;
+    width:370px;
     max-width:100%;
 }
 
-/* Animação mais perceptível */
+/* animação flutuante mais visível */
 @keyframes floatPhone{
-    0%{ transform:translateY(0px) rotate(-2deg); }
-    50%{ transform:translateY(-20px) rotate(2deg); }
-    100%{ transform:translateY(0px) rotate(-2deg); }
+    0%{ transform:translateY(0px) rotate(-3deg); }
+    50%{ transform:translateY(-25px) rotate(3deg); }
+    100%{ transform:translateY(0px) rotate(-3deg); }
+}
+
+/* CARDS FLUTUANTES */
+.floating-card{
+    position:absolute;
+    background:white;
+    color:#1e5db8;
+    padding:18px 28px;
+    border-radius:20px;
+    font-weight:700;
+    box-shadow:0 15px 35px rgba(0,0,0,0.15);
+    animation:floatCard 5s ease-in-out infinite;
+}
+
+.floating-left{
+    left:5%;
+    top:35%;
+}
+
+.floating-right{
+    right:5%;
+    bottom:20%;
+}
+
+@keyframes floatCard{
+    0%{ transform:translateY(0px); }
+    50%{ transform:translateY(-15px); }
+    100%{ transform:translateY(0px); }
 }
 
 /* FEATURES */
 .features{
-    padding:80px 20px;
+    padding:100px 20px;
     text-align:center;
 }
 
@@ -121,10 +150,6 @@ header img{
 .card.show{
     opacity:1;
     transform:translateY(0);
-}
-
-.card:hover{
-    transform:translateY(-8px);
 }
 
 .icon-circle{
@@ -169,7 +194,7 @@ header img{
     transform:translateY(0);
 }
 
-/* CTA FINAL */
+/* CTA */
 .cta{
     background:linear-gradient(135deg,#0f2f63,#1e5db8);
     color:white;
@@ -193,17 +218,22 @@ footer{
 }
 
 /* RESPONSIVO */
-@media(max-width:768px){
+@media(max-width:900px){
+
+    header img{
+        width:170px;
+    }
+
+    .floating-card{
+        display:none; /* esconde no mobile para não quebrar layout */
+    }
+
     .hero h1{
         font-size:28px;
     }
 
     .mockup img{
         width:280px;
-    }
-
-    header img{
-        width:150px;
     }
 }
 </style>
@@ -217,11 +247,22 @@ footer{
 <section class="hero">
     <h1>Viva a Palavra todos os dias</h1>
     <p>O ComCristo foi criado para ajudar você a criar constância espiritual com leveza, profundidade e propósito.</p>
-    <a class="btn-primary">Lançamento em breve</a>
-    <small>Disponível apenas para Android no momento</small>
+    <a class="btn-primary">Lançamento em breve!</a>
 
-    <div class="mockup">
-        <img src="mockup.png" alt="App ComCristo">
+    <div class="mockup-container">
+
+        <div class="floating-card floating-left">
+            Devocional Completo
+        </div>
+
+        <div class="mockup">
+            <img src="mockup.png" alt="App ComCristo">
+        </div>
+
+        <div class="floating-card floating-right">
+            Poderosa Palavra de Deus
+        </div>
+
     </div>
 </section>
 
