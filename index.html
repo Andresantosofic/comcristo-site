@@ -8,38 +8,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
     font-family:'Poppins',sans-serif;
     background:#f5f7fa;
     color:#1a1a1a;
     overflow-x:hidden;
 }
+section{padding:80px 20px;}
+.container{max-width:1100px;margin:auto;}
+h1,h2{font-weight:800;}
+p{line-height:1.6;}
 
-section{
-    padding:80px 20px;
-}
-
-.container{
-    max-width:1100px;
-    margin:auto;
-    position:relative;
-}
-
-/* FAIXA LOGO */
-.topbar{
+/* HEADER */
+.header{
     background:white;
-    padding:6px 0;
+    padding:10px 0;
     text-align:center;
 }
-
-.topbar img{
-    height:42px;
+.header img{
+    height:55px;
 }
 
 /* HERO */
@@ -50,18 +38,8 @@ section{
     position:relative;
     overflow:hidden;
 }
-
-.hero h1{
-    font-size:36px;
-    margin-bottom:20px;
-}
-
-.hero p{
-    max-width:600px;
-    margin:auto;
-    opacity:0.9;
-}
-
+.hero h1{font-size:38px;margin-bottom:20px;}
+.hero p{max-width:600px;margin:auto;opacity:0.9;}
 .btn-primary{
     margin-top:30px;
     background:white;
@@ -70,100 +48,69 @@ section{
     border-radius:40px;
     font-weight:700;
     display:inline-block;
-    transition:0.3s;
 }
-
-.btn-primary:hover{
-    transform:scale(1.05);
-}
+.hero small{display:block;margin-top:15px;opacity:0.8;}
 
 /* MOCKUP */
-.mockup{
-    margin-top:70px;
+.mockup-wrapper{
     position:relative;
+    margin-top:60px;
     display:flex;
     justify-content:center;
-    align-items:center;
 }
-
-.mockup img{
-    width:430px;
-    max-width:95%;
-    animation:floatPhone 5s ease-in-out infinite;
-    transform:rotate(-1.5deg);
-    z-index:2;
+.mockup{
+    width:360px;
+    transform:rotate(-8deg);
+    animation:float 5s ease-in-out infinite;
 }
+.mockup img{width:100%;}
 
 /* CARDS FLUTUANTES */
-.float-card{
+.floating-card{
     position:absolute;
     background:white;
     color:#1e5db8;
-    padding:12px 20px;
+    padding:12px 22px;
     border-radius:30px;
     font-weight:600;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
     font-size:14px;
-    box-shadow:0 12px 28px rgba(0,0,0,0.18);
-    animation:floatCard 4s ease-in-out infinite;
-    z-index:3;
-    white-space:nowrap;
+}
+.card-left{
+    left:5%;
+    top:40%;
+}
+.card-right{
+    right:5%;
+    bottom:18%;
 }
 
-/* POSIÇÕES AJUSTADAS */
-.float-left{
-    left:8%;
-    top:10%;
-}
-
-.float-right{
-    right:8%;
-    bottom:5%;
-}
-
-/* FEATURES */
-.features{
-    text-align:center;
-}
-
-.features h2{
-    margin-bottom:40px;
-    color:#0f2f63;
-}
-
+/* FUNCIONALIDADES */
+.features{text-align:center;}
+.features h2{margin-bottom:40px;color:#0f2f63;}
 .card{
     background:linear-gradient(135deg,#0f2f63,#1e5db8);
     color:white;
-    padding:40px;
-    border-radius:30px;
-    margin-bottom:30px;
-    transition:0.6s;
+    padding:35px;
+    border-radius:25px;
+    margin-bottom:25px;
     opacity:0;
     transform:translateY(40px);
+    transition:0.6s;
 }
-
 .card.show{
     opacity:1;
     transform:translateY(0);
 }
-
-.card:hover{
-    transform:translateY(-8px);
-}
-
-.card-icon{
-    font-size:36px;
+.card i{
+    font-size:30px;
     margin-bottom:15px;
-}
-
-.card h3{
-    margin-bottom:10px;
+    display:block;
 }
 
 /* BENEFÍCIOS */
-.benefits{
-    text-align:center;
-}
-
+.benefits{text-align:center;}
+.benefits h2{margin-bottom:40px;color:#0f2f63;}
 .benefit-box{
     background:white;
     padding:30px;
@@ -174,23 +121,18 @@ section{
     transform:translateY(40px);
     transition:0.6s;
 }
-
 .benefit-box.show{
     opacity:1;
     transform:translateY(0);
 }
 
-/* CTA */
+/* CTA FINAL */
 .cta{
     background:linear-gradient(135deg,#0f2f63,#1e5db8);
     color:white;
     text-align:center;
 }
-
-.cta h2{
-    font-size:32px;
-    margin-bottom:20px;
-}
+.cta h2{font-size:32px;margin-bottom:20px;}
 
 /* FOOTER */
 footer{
@@ -201,120 +143,124 @@ footer{
     font-size:14px;
 }
 
-/* ANIMAÇÕES */
-@keyframes floatPhone{
-    0%{transform:translateY(0px) rotate(-1.5deg);}
-    50%{transform:translateY(-18px) rotate(-1.5deg);}
-    100%{transform:translateY(0px) rotate(-1.5deg);}
-}
-
-@keyframes floatCard{
-    0%{transform:translateY(0px);}
-    50%{transform:translateY(-10px);}
-    100%{transform:translateY(0px);}
+/* ANIMAÇÃO */
+@keyframes float{
+    0%{transform:rotate(-8deg) translateY(0px);}
+    50%{transform:rotate(-8deg) translateY(-18px);}
+    100%{transform:rotate(-8deg) translateY(0px);}
 }
 
 /* RESPONSIVO */
 @media(max-width:768px){
-
-    .hero h1{
-        font-size:26px;
-    }
-
-    .mockup img{
-        width:330px;
-        transform:rotate(-1deg);
-    }
-
-    .float-left{
-        left:2%;
-        top:8%;
-        font-size:12px;
-    }
-
-    .float-right{
-        right:2%;
-        bottom:2%;
-        font-size:12px;
-    }
+    .mockup{width:300px;}
+    .card-left{left:0%;top:35%;}
+    .card-right{right:0%;bottom:15%;}
 }
 </style>
 </head>
 <body>
 
-<div class="topbar">
-    <img src="logo.png" alt="ComCristo Logo">
+<!-- HEADER -->
+<div class="header">
+    <img src="logo.png" alt="Logo ComCristo">
 </div>
 
+<!-- HERO -->
 <section class="hero">
     <div class="container">
         <h1>Viva a Palavra todos os dias</h1>
         <p>O ComCristo foi criado para ajudar você a criar constância espiritual com leveza, profundidade e propósito.</p>
         <a class="btn-primary">Lançamento em breve!</a>
+        <small>Disponível apenas para Android no momento</small>
 
-        <div class="mockup">
-            <div class="float-card float-left">Devocional Completo</div>
-            <img src="mockup.png" alt="App ComCristo">
-            <div class="float-card float-right">Poderosa Palavra de Deus</div>
+        <div class="mockup-wrapper">
+            <div class="floating-card card-left">Devocional Completo</div>
+            <div class="floating-card card-right">Poderosa Palavra de Deus</div>
+
+            <div class="mockup">
+                <img src="mockup.png" alt="App ComCristo">
+            </div>
         </div>
     </div>
 </section>
 
+<!-- FUNCIONALIDADES -->
 <section class="features">
     <div class="container">
         <h2>Funcionalidades do Aplicativo</h2>
 
         <div class="card">
-            <div class="card-icon">📖</div>
+            <i>📖</i>
             <h3>Versículo Diário</h3>
             <p>A palavra de Deus todos os dias, com notificação no horário que você escolher.</p>
         </div>
 
         <div class="card">
-            <div class="card-icon">📝</div>
+            <i>📝</i>
             <h3>Devocional</h3>
             <p>Devocional completo todos os dias para manter sua fé viva.</p>
         </div>
 
         <div class="card">
-            <div class="card-icon">📚</div>
+            <i>📚</i>
             <h3>Bíblia Sagrada</h3>
             <p>Leitura organizada por livros e capítulos com marcação de versículos.</p>
         </div>
 
         <div class="card">
-            <div class="card-icon">🔖</div>
+            <i>⭐</i>
             <h3>Favoritos</h3>
             <p>Salve e organize versículos importantes para revisar depois.</p>
         </div>
-
     </div>
 </section>
 
+<!-- BENEFÍCIOS -->
+<section class="benefits">
+    <div class="container">
+        <h2>Por que usar o ComCristo?</h2>
+
+        <div class="benefit-box">
+            <h3>Constância</h3>
+            <p>Ferramentas que ajudam você a manter disciplina espiritual diária.</p>
+        </div>
+
+        <div class="benefit-box">
+            <h3>Organização</h3>
+            <p>Seu progresso salvo e organizado dentro do aplicativo.</p>
+        </div>
+
+        <div class="benefit-box">
+            <h3>Leveza</h3>
+            <p>Design minimalista e focado na Palavra.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA FINAL -->
 <section class="cta">
     <div class="container">
         <h2>Em breve você poderá começar uma nova jornada!</h2>
-        <a class="btn-primary">Lançamento em breve!</a>
+        <a class="btn-primary">Lançamento em breve</a>
     </div>
 </section>
 
 <footer>
-© 2026 ComCristo • Seu devocional diário • Desenvolvido por André Santos
+    © 2026 ComCristo • Seu devocional diário
 </footer>
 
 <script>
-const elements=document.querySelectorAll('.card');
+const elements = document.querySelectorAll('.card, .benefit-box');
 
 function showOnScroll(){
-    const trigger=window.innerHeight*0.85;
+    const trigger = window.innerHeight * 0.85;
     elements.forEach(el=>{
-        const top=el.getBoundingClientRect().top;
-        if(top<trigger){
+        const top = el.getBoundingClientRect().top;
+        if(top < trigger){
             el.classList.add('show');
         }
     });
 }
-
 window.addEventListener('scroll',showOnScroll);
 showOnScroll();
 </script>
