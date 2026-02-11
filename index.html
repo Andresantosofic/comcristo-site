@@ -3,30 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ComCristo - Seu devocional diário</title>
+<title>Sobre - ComCristo</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Poppins', sans-serif;
+    margin: 0;
     background: #f5f7fa;
     color: #1a1a1a;
-    overflow-x: hidden;
 }
 
 section {
-    padding: 80px 20px;
+    padding: 70px 20px;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 900px;
     margin: auto;
 }
 
@@ -34,214 +28,54 @@ h1, h2 {
     font-weight: 800;
 }
 
-p {
-    line-height: 1.6;
-}
-
-/* FAIXA SUPERIOR */
 .topbar {
     background: white;
-    padding: 5px 10px;
     text-align: center;
+    padding: 10px;
 }
 
 .topbar img {
-    height: 60px;
+    height: 55px;
 }
 
-/* HERO */
 .hero {
     background: linear-gradient(135deg, #0f2f63, #1e5db8);
     color: white;
     text-align: center;
-    position: relative;
-    overflow: hidden;
 }
 
-.hero h1 {
-    font-size: 42px;
-    margin-bottom: 20px;
-    animation: fadeUp 1s ease forwards;
-}
-
-.hero p {
-    max-width: 600px;
-    margin: auto;
-    opacity: 0.9;
-    animation: fadeUp 1.4s ease forwards;
-}
-
-.btn-primary {
-    margin-top: 30px;
+.card-white {
     background: white;
-    color: #1e5db8;
-    padding: 15px 35px;
-    border-radius: 40px;
-    font-weight: 700;
-    display: inline-block;
-    transition: 0.3s;
-    animation: fadeUp 1.8s ease forwards;
-    text-decoration: none;
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
 }
 
-.btn-primary:hover {
-    transform: scale(1.05);
-}
-
-.hero small {
-    display: block;
-    margin-top: 15px;
-    opacity: 0.8;
-}
-
-/* MOCKUP */
-.mockup {
-    position: relative;
-    text-align: center;
-    margin-top: 60px;
-}
-
-.mockup img {
-    width: 320px;
-    max-width: 100%;
-    animation: floatAdvanced 5s ease-in-out infinite;
-    filter: drop-shadow(0 25px 35px rgba(0,0,0,0.35));
-}
-
-/* CARDS FLUTUANTES */
-.floating-card {
-    position: absolute;
-    background: white;
-    color: #1e5db8;
-    padding: 12px 22px;
-    border-radius: 40px;
-    font-weight: 600;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    white-space: nowrap;
-}
-
-.card-top-left {
-    top: 5%;
-    left: 8%;
-}
-
-.card-bottom-right {
-    bottom: 8%;
-    right: 5%;
-}
-
-/* FEATURES */
-.features {
-    text-align: center;
-}
-
-.features h2 {
-    margin-bottom: 40px;
-    color: #0f2f63;
-}
-
-.card {
+.support-box {
     background: linear-gradient(135deg, #0f2f63, #1e5db8);
     color: white;
     padding: 35px;
     border-radius: 25px;
-    margin-bottom: 25px;
-    transition: 0.4s;
-    opacity: 0;
-    transform: translateY(40px);
+    margin-top: 30px;
 }
 
-.card.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card h3 {
-    margin-bottom: 10px;
-}
-
-/* BENEFÍCIOS */
-.benefits {
-    text-align: center;
-}
-
-.benefit-box {
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 30px;
     background: white;
-    padding: 30px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.6s;
+    color: #1e5db8;
+    border-radius: 40px;
+    font-weight: 700;
+    text-decoration: none;
 }
 
-.benefit-box.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* NOVA SEÇÃO SOBRE */
-.about-preview {
-    text-align: center;
-    padding: 70px 20px;
-}
-
-.about-card {
-    background: white;
-    padding: 40px;
-    border-radius: 25px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-}
-
-.about-card h2 {
-    margin-bottom: 15px;
-    color: #0f2f63;
-}
-
-.about-card p {
-    margin-bottom: 25px;
-}
-
-/* CTA */
-.cta {
-    background: linear-gradient(135deg, #0f2f63, #1e5db8);
-    color: white;
-    text-align: center;
-}
-
-.cta h2 {
-    font-size: 34px;
-    margin-bottom: 20px;
-}
-
-/* FOOTER */
 footer {
     background: #0f2f63;
     color: white;
     text-align: center;
-    padding: 30px 20px;
-    font-size: 14px;
-}
-
-/* ANIMAÇÕES */
-@keyframes fadeUp {
-    from {opacity:0; transform:translateY(40px);}
-    to {opacity:1; transform:translateY(0);}
-}
-
-@keyframes floatAdvanced {
-    0%   { transform: translateY(0px) rotate(-6deg); }
-    50%  { transform: translateY(-18px) rotate(-4deg); }
-    100% { transform: translateY(0px) rotate(-6deg); }
-}
-
-@media(max-width:768px){
-    .hero h1 { font-size: 28px; }
+    padding: 25px;
 }
 </style>
 </head>
@@ -253,103 +87,46 @@ footer {
 
 <section class="hero">
     <div class="container">
-        <h1>Viva a Palavra todos os dias</h1>
-        <p>O ComCristo foi criado para ajudar você a criar constância espiritual com leveza, profundidade e propósito.</p>
-        <a class="btn-primary">Lançamento em breve</a>
-        <small>Disponível apenas para Android no momento</small>
-
-        <div class="mockup">
-            <div class="floating-card card-top-left">Devocional Completo</div>
-            <img src="mockup.png" alt="App ComCristo">
-            <div class="floating-card card-bottom-right">Poderosa Palavra de Deus</div>
-        </div>
+        <h1>Sobre o ComCristo</h1>
+        <p>Conheça a história e o propósito por trás do aplicativo.</p>
     </div>
 </section>
 
-<section class="features">
+<section>
     <div class="container">
-        <h2>Funcionalidades do Aplicativo</h2>
 
-        <div class="card"> 
-            <h3>📖 Versículo Diário</h3>
-            <p>A palavra de Deus todos os dias, com notificação no horário que você escolher.</p>
+        <div class="card-white">
+            <h2>Sobre o Criador</h2>
+            <p>Meu nome é André Santos, sou cristão, criador de conteúdo e designer. Minha caminhada com Cristo começou em 31 de julho de 2025...</p>
         </div>
 
-        <div class="card">
-            <h3>✍️ Devocional</h3>
-            <p>Devocional completo todos os dias para manter sua fé viva.</p>
+        <div class="card-white">
+            <h2>Sobre o Aplicativo</h2>
+            <p>O ComCristo foi pensado para ser um companheiro diário de fé, com versículos, devocionais e Bíblia organizada de forma simples e acessível.</p>
         </div>
 
-        <div class="card">
-            <h3>📚 Bíblia Sagrada</h3>
-            <p>Leitura organizada por livros e capítulos com marcação de versículos.</p>
+        <div class="support-box">
+            <h2>Apoie este projeto cristão</h2>
+            <p>Este é um projeto totalmente independente. Sua contribuição ajuda na manutenção do aplicativo e em ações sociais.</p>
+
+            <p><strong>Pix:</strong> comcristoapp@gmail.com</p>
+
+            <a class="btn" onclick="copiarPix()">Copiar chave Pix</a>
+            <a class="btn" href="#">Apoiar com cartão</a>
         </div>
 
-        <div class="card">
-            <h3>❤️ Favoritos</h3>
-            <p>Salve e organize versículos importantes para revisar depois.</p>
-        </div>
-    </div>
-</section>
-
-<section class="benefits">
-    <div class="container">
-        <h2>Por que usar o ComCristo?</h2>
-
-        <div class="benefit-box">
-            <h3>Constância</h3>
-            <p>Ferramentas que ajudam você a manter disciplina espiritual diária.</p>
-        </div>
-
-        <div class="benefit-box">
-            <h3>Organização</h3>
-            <p>Seu progresso salvo e organizado dentro do aplicativo.</p>
-        </div>
-
-        <div class="benefit-box">
-            <h3>Leveza</h3>
-            <p>Design minimalista e focado na Palavra.</p>
-        </div>
-    </div>
-</section>
-
-<!-- NOVA SEÇÃO ADICIONADA -->
-<section class="about-preview">
-    <div class="container">
-        <div class="about-card">
-            <h2>Saiba mais sobre o criador, o aplicativo e o projeto</h2>
-            <p>Conheça a história por trás do ComCristo e como você pode fazer parte desse propósito.</p>
-            <a href="sobre.html" class="btn-primary">Saiba mais</a>
-        </div>
-    </div>
-</section>
-
-<section class="cta">
-    <div class="container">
-        <h2>Em breve você poderá começar uma nova jornada!</h2>
-        <a class="btn-primary">Lançamento em breve</a>
     </div>
 </section>
 
 <footer>
-    © 2026 ComCristo • Seu devocional diário • Desenvolvido por André Santos
+© 2026 ComCristo • Seu devocional diário
 </footer>
 
 <script>
-const elements = document.querySelectorAll('.card, .benefit-box');
-
-function showOnScroll(){
-    const trigger = window.innerHeight * 0.85;
-    elements.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        if(top < trigger){
-            el.classList.add('show');
-        }
-    });
+function copiarPix(){
+    navigator.clipboard.writeText("comcristoapp@gmail.com");
+    alert("Chave Pix copiada!");
 }
-
-window.addEventListener('scroll', showOnScroll);
-showOnScroll();
 </script>
 
 </body>
