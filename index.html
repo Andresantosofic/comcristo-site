@@ -38,6 +38,17 @@ p {
     line-height: 1.6;
 }
 
+/* FAIXA SUPERIOR */
+.top-bar {
+    background: white;
+    text-align: center;
+    padding: 25px 0;
+}
+
+.top-bar img {
+    width: 220px;
+}
+
 /* HERO */
 .hero {
     background: linear-gradient(135deg, #0f2f63, #1e5db8);
@@ -86,12 +97,35 @@ p {
 .mockup {
     text-align: center;
     margin-top: 60px;
+    position: relative;
     animation: float 6s ease-in-out infinite;
 }
 
 .mockup img {
-    width: 320px;
+    width: 340px;
     max-width: 100%;
+}
+
+/* CARDS FLUTUANTES */
+.floating-card {
+    position: absolute;
+    background: white;
+    color: #1e5db8;
+    padding: 14px 22px;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    font-size: 14px;
+}
+
+.floating-left {
+    top: 40px;
+    left: 5%;
+}
+
+.floating-right {
+    bottom: 30px;
+    right: 5%;
 }
 
 /* CARDS */
@@ -125,6 +159,12 @@ p {
 }
 
 .card h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.card .icon {
+    font-size: 32px;
     margin-bottom: 10px;
 }
 
@@ -187,10 +227,22 @@ footer {
     .hero h1 {
         font-size: 28px;
     }
+
+    .floating-left,
+    .floating-right {
+        position: static;
+        display: inline-block;
+        margin: 15px 5px;
+    }
 }
 </style>
 </head>
 <body>
+
+<!-- FAIXA SUPERIOR -->
+<div class="top-bar">
+    <img src="logo.png" alt="Logo ComCristo">
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -201,7 +253,9 @@ footer {
         <small>Disponível apenas para Android no momento</small>
 
         <div class="mockup">
+            <div class="floating-card floating-left">Devocional Completo</div>
             <img src="mockup.png" alt="App ComCristo">
+            <div class="floating-card floating-right">Poderosa Palavra de Deus</div>
         </div>
     </div>
 </section>
@@ -211,22 +265,26 @@ footer {
     <div class="container">
         <h2>Funcionalidades do Aplicativo</h2>
 
-        <div class="card"> 
+        <div class="card">
+            <div class="icon">📖</div>
             <h3>Versículo Diário</h3>
             <p>A palavra de Deus todos os dias, com notificação no horário que você escolher.</p>
         </div>
 
         <div class="card">
+            <div class="icon">✍️</div>
             <h3>Devocional</h3>
             <p>Devocional completo todos os dias para manter sua fé viva.</p>
         </div>
 
         <div class="card">
+            <div class="icon">📚</div>
             <h3>Bíblia Sagrada</h3>
             <p>Leitura organizada por livros e capítulos com marcação de versículos.</p>
         </div>
 
         <div class="card">
+            <div class="icon">❤️</div>
             <h3>Favoritos</h3>
             <p>Salve e organize versículos importantes para revisar depois.</p>
         </div>
