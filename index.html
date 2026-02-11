@@ -17,20 +17,23 @@
 body{
     font-family:'Poppins',sans-serif;
     background:#f4f6fb;
-    color:#1a1a1a;
     overflow-x:hidden;
 }
 
-/* HEADER */
+/* HEADER FAIXA FINA REAL */
 header{
     background:white;
-    padding:8px 0; /* faixa fina */
-    text-align:center;
+    height:60px;               /* força faixa fina */
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;           /* corta excesso da imagem */
     box-shadow:0 2px 6px rgba(0,0,0,0.05);
 }
 
 header img{
-    width:230px; /* logo maior */
+    height:40px;               /* controla tamanho real da logo */
+    width:auto;
 }
 
 /* HERO */
@@ -40,11 +43,10 @@ header img{
     text-align:center;
     padding:100px 20px 140px 20px;
     position:relative;
-    overflow:hidden;
 }
 
 .hero h1{
-    font-size:42px;
+    font-size:36px;
     font-weight:800;
     margin-bottom:20px;
 }
@@ -83,11 +85,10 @@ header img{
 }
 
 .mockup img{
-    width:370px;
-    max-width:100%;
+    width:340px;
+    max-width:90%;
 }
 
-/* animação flutuante mais visível */
 @keyframes floatPhone{
     0%{ transform:translateY(0px) rotate(-3deg); }
     50%{ transform:translateY(-25px) rotate(3deg); }
@@ -99,141 +100,62 @@ header img{
     position:absolute;
     background:white;
     color:#1e5db8;
-    padding:18px 28px;
-    border-radius:20px;
+    padding:14px 22px;
+    border-radius:16px;
     font-weight:700;
-    box-shadow:0 15px 35px rgba(0,0,0,0.15);
+    font-size:14px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
     animation:floatCard 5s ease-in-out infinite;
 }
 
 .floating-left{
-    left:5%;
-    top:35%;
+    left:10%;
+    top:40%;
 }
 
 .floating-right{
-    right:5%;
-    bottom:20%;
+    right:10%;
+    bottom:25%;
 }
 
 @keyframes floatCard{
     0%{ transform:translateY(0px); }
-    50%{ transform:translateY(-15px); }
+    50%{ transform:translateY(-12px); }
     100%{ transform:translateY(0px); }
 }
 
-/* FEATURES */
-.features{
-    padding:100px 20px;
-    text-align:center;
-}
+/* RESPONSIVO AJUSTADO */
+@media(max-width:768px){
 
-.features h2{
-    font-size:32px;
-    margin-bottom:50px;
-    color:#0f2f63;
-    font-weight:800;
-}
-
-.card{
-    background:linear-gradient(135deg,#153c7a,#2c66d1);
-    color:white;
-    padding:45px 30px;
-    border-radius:30px;
-    margin-bottom:30px;
-    box-shadow:0 20px 40px rgba(0,0,0,0.08);
-    transition:all 0.6s ease;
-    opacity:0;
-    transform:translateY(40px);
-}
-
-.card.show{
-    opacity:1;
-    transform:translateY(0);
-}
-
-.icon-circle{
-    width:85px;
-    height:85px;
-    margin:0 auto 25px auto;
-    background:rgba(255,255,255,0.15);
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:40px;
-}
-
-/* BENEFÍCIOS */
-.benefits{
-    padding:80px 20px;
-    text-align:center;
-}
-
-.benefits h2{
-    font-size:30px;
-    margin-bottom:40px;
-    color:#0f2f63;
-    font-weight:800;
-}
-
-.benefit-box{
-    backdrop-filter:blur(15px);
-    background:rgba(255,255,255,0.7);
-    padding:35px;
-    border-radius:25px;
-    margin-bottom:25px;
-    box-shadow:0 15px 30px rgba(0,0,0,0.05);
-    transition:all 0.6s ease;
-    opacity:0;
-    transform:translateY(40px);
-}
-
-.benefit-box.show{
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* CTA */
-.cta{
-    background:linear-gradient(135deg,#0f2f63,#1e5db8);
-    color:white;
-    text-align:center;
-    padding:100px 20px;
-}
-
-.cta h2{
-    font-size:36px;
-    margin-bottom:25px;
-    font-weight:800;
-}
-
-/* FOOTER */
-footer{
-    background:#0f2f63;
-    color:white;
-    text-align:center;
-    padding:30px 20px;
-    font-size:14px;
-}
-
-/* RESPONSIVO */
-@media(max-width:900px){
-
-    header img{
-        width:170px;
+    header{
+        height:55px;
     }
 
-    .floating-card{
-        display:none; /* esconde no mobile para não quebrar layout */
+    header img{
+        height:35px;
     }
 
     .hero h1{
-        font-size:28px;
+        font-size:26px;
     }
 
     .mockup img{
-        width:280px;
+        width:260px;
+    }
+
+    .floating-left{
+        left:5%;
+        top:35%;
+    }
+
+    .floating-right{
+        right:5%;
+        bottom:20%;
+    }
+
+    .floating-card{
+        font-size:12px;
+        padding:10px 16px;
     }
 }
 </style>
@@ -265,79 +187,6 @@ footer{
 
     </div>
 </section>
-
-<section class="features">
-    <h2>Funcionalidades do Aplicativo</h2>
-
-    <div class="card">
-        <div class="icon-circle">📖</div>
-        <h3>Versículo Diário</h3>
-        <p>A palavra de Deus todos os dias, com notificação no horário que você escolher.</p>
-    </div>
-
-    <div class="card">
-        <div class="icon-circle">✍️</div>
-        <h3>Devocional</h3>
-        <p>Devocional completo todos os dias para manter sua fé viva.</p>
-    </div>
-
-    <div class="card">
-        <div class="icon-circle">📚</div>
-        <h3>Bíblia Sagrada</h3>
-        <p>Leitura organizada por livros e capítulos com marcação de versículos.</p>
-    </div>
-
-    <div class="card">
-        <div class="icon-circle">🔖</div>
-        <h3>Favoritos</h3>
-        <p>Salve e organize versículos importantes para revisar depois.</p>
-    </div>
-</section>
-
-<section class="benefits">
-    <h2>Por que usar o ComCristo?</h2>
-
-    <div class="benefit-box">
-        <h3>Constância</h3>
-        <p>Ferramentas que ajudam você a manter disciplina espiritual diária.</p>
-    </div>
-
-    <div class="benefit-box">
-        <h3>Organização</h3>
-        <p>Seu progresso salvo e organizado dentro do aplicativo.</p>
-    </div>
-
-    <div class="benefit-box">
-        <h3>Leveza</h3>
-        <p>Design minimalista e focado na Palavra.</p>
-    </div>
-</section>
-
-<section class="cta">
-    <h2>Em breve você poderá começar uma nova jornada!</h2>
-    <a class="btn-primary">Lançamento em breve</a>
-</section>
-
-<footer>
-    © 2026 ComCristo • Seu devocional diário • Desenvolvido por André Santos
-</footer>
-
-<script>
-const elements = document.querySelectorAll('.card, .benefit-box');
-
-function showOnScroll(){
-    const trigger = window.innerHeight * 0.85;
-    elements.forEach(el=>{
-        const top = el.getBoundingClientRect().top;
-        if(top < trigger){
-            el.classList.add('show');
-        }
-    });
-}
-
-window.addEventListener('scroll', showOnScroll);
-showOnScroll();
-</script>
 
 </body>
 </html>
