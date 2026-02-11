@@ -52,7 +52,7 @@ section{
 }
 
 .hero h1{
-    font-size:38px;
+    font-size:36px;
     margin-bottom:20px;
 }
 
@@ -84,39 +84,39 @@ section{
     display:flex;
     justify-content:center;
     align-items:center;
-    flex-direction:column;
 }
 
 .mockup img{
-    width:430px;
+    width:420px;
     max-width:95%;
     animation:floatPhone 5s ease-in-out infinite;
-    transform:rotate(-3deg);
+    transform:rotate(-2deg);
     z-index:2;
 }
 
 /* CARDS FLUTUANTES */
 .float-card{
+    position:absolute;
     background:white;
     color:#1e5db8;
-    padding:14px 22px;
-    border-radius:40px;
+    padding:10px 18px;
+    border-radius:30px;
     font-weight:600;
-    box-shadow:0 15px 35px rgba(0,0,0,0.15);
+    font-size:14px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.18);
     animation:floatCard 4s ease-in-out infinite;
-    margin:15px 0;
+    z-index:3;
+    white-space:nowrap;
 }
 
 .float-left{
-    position:absolute;
     left:5%;
-    top:45%;
+    top:55%;
 }
 
 .float-right{
-    position:absolute;
     right:5%;
-    bottom:15%;
+    bottom:20%;
 }
 
 /* FEATURES */
@@ -149,14 +149,13 @@ section{
     transform:translateY(-8px);
 }
 
-.card h3{
-    margin-bottom:10px;
-    font-size:22px;
+.card-icon{
+    font-size:36px;
+    margin-bottom:15px;
 }
 
-.card-icon{
-    font-size:38px;
-    margin-bottom:15px;
+.card h3{
+    margin-bottom:10px;
 }
 
 /* BENEFITS */
@@ -188,7 +187,7 @@ section{
 }
 
 .cta h2{
-    font-size:34px;
+    font-size:32px;
     margin-bottom:20px;
 }
 
@@ -203,14 +202,14 @@ footer{
 
 /* ANIMAÇÕES */
 @keyframes floatPhone{
-    0%{transform:translateY(0px) rotate(-3deg);}
-    50%{transform:translateY(-20px) rotate(-3deg);}
-    100%{transform:translateY(0px) rotate(-3deg);}
+    0%{transform:translateY(0px) rotate(-2deg);}
+    50%{transform:translateY(-18px) rotate(-2deg);}
+    100%{transform:translateY(0px) rotate(-2deg);}
 }
 
 @keyframes floatCard{
     0%{transform:translateY(0px);}
-    50%{transform:translateY(-10px);}
+    50%{transform:translateY(-8px);}
     100%{transform:translateY(0px);}
 }
 
@@ -218,22 +217,22 @@ footer{
 @media(max-width:768px){
 
     .hero h1{
-        font-size:28px;
+        font-size:26px;
     }
 
     .mockup img{
-        width:320px;
-        transform:rotate(-2deg);
+        width:330px;
+        transform:rotate(-1deg);
     }
 
-    .float-left,
+    .float-left{
+        left:2%;
+        top:50%;
+    }
+
     .float-right{
-        position:relative;
-        left:auto;
-        right:auto;
-        top:auto;
-        bottom:auto;
-        margin-top:15px;
+        right:2%;
+        bottom:15%;
     }
 }
 </style>
