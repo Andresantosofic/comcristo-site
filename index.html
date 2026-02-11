@@ -15,61 +15,53 @@
 }
 
 body{
-    font-family:'Poppins', sans-serif;
+    font-family:'Poppins',sans-serif;
     background:#f4f6fb;
     color:#1a1a1a;
     overflow-x:hidden;
 }
 
-section{
-    padding:80px 20px;
-}
-
-.container{
-    max-width:1100px;
-    margin:auto;
-}
-
-/* LOGO BAR */
-.logo-bar{
+/* HEADER */
+header{
     background:white;
-    padding:20px;
+    padding:20px 0;
     text-align:center;
-    box-shadow:0 5px 20px rgba(0,0,0,0.05);
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
-.logo-bar img{
-    height:45px;
+header img{
+    width:180px;
 }
 
 /* HERO */
 .hero{
-    background:linear-gradient(135deg,#123B8F,#2F6BFF);
+    background:linear-gradient(135deg,#0f2f63,#1e5db8);
     color:white;
     text-align:center;
+    padding:100px 20px 80px 20px;
     position:relative;
 }
 
 .hero h1{
-    font-size:46px;
+    font-size:42px;
+    font-weight:800;
     margin-bottom:20px;
 }
 
 .hero p{
     max-width:600px;
     margin:auto;
-    opacity:0.95;
+    opacity:0.9;
 }
 
 .btn-primary{
-    margin-top:30px;
-    background:white;
-    color:#123B8F;
-    padding:18px 45px;
-    border-radius:50px;
-    font-weight:700;
     display:inline-block;
-    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    margin-top:35px;
+    background:white;
+    color:#1e5db8;
+    padding:16px 40px;
+    border-radius:40px;
+    font-weight:700;
     transition:0.3s;
 }
 
@@ -80,35 +72,38 @@ section{
 .hero small{
     display:block;
     margin-top:15px;
-    opacity:0.9;
+    opacity:0.85;
 }
 
+/* MOCKUP */
 .mockup{
-    margin-top:60px;
+    margin-top:70px;
     animation:float 6s ease-in-out infinite;
 }
 
 .mockup img{
-    width:320px;
+    width:350px;
     max-width:100%;
 }
 
-/* FUNCIONALIDADES */
+/* FEATURES */
 .features{
+    padding:80px 20px;
     text-align:center;
 }
 
 .features h2{
-    margin-bottom:50px;
-    color:#123B8F;
     font-size:32px;
+    margin-bottom:50px;
+    color:#0f2f63;
+    font-weight:800;
 }
 
 .card{
-    background:linear-gradient(135deg,#123B8F,#2F6BFF);
+    background:linear-gradient(135deg,#153c7a,#2c66d1);
     color:white;
-    padding:50px 30px;
-    border-radius:35px;
+    padding:45px 30px;
+    border-radius:30px;
     margin-bottom:30px;
     box-shadow:0 20px 40px rgba(0,0,0,0.08);
     transition:0.4s;
@@ -118,35 +113,41 @@ section{
     transform:translateY(-8px);
 }
 
-.card img{
-    width:55px;
-    margin-bottom:20px;
-    filter:brightness(0) invert(1);
+.icon-circle{
+    width:90px;
+    height:90px;
+    margin:0 auto 25px auto;
+    background:rgba(255,255,255,0.15);
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.card h3{
-    margin-bottom:10px;
-    font-size:20px;
+.icon-circle img{
+    width:45px;
 }
 
-/* BENEFÍCIOS - EFEITO GLASS */
+/* BENEFÍCIOS */
 .benefits{
+    padding:80px 20px;
     text-align:center;
 }
 
 .benefits h2{
+    font-size:30px;
     margin-bottom:40px;
-    color:#123B8F;
+    color:#0f2f63;
+    font-weight:800;
 }
 
 .benefit-box{
-    background:rgba(255,255,255,0.6);
     backdrop-filter:blur(15px);
-    -webkit-backdrop-filter:blur(15px);
+    background:rgba(255,255,255,0.6);
     padding:35px;
     border-radius:25px;
     margin-bottom:25px;
-    box-shadow:0 15px 35px rgba(0,0,0,0.08);
+    box-shadow:0 15px 30px rgba(0,0,0,0.05);
     transition:0.4s;
 }
 
@@ -156,26 +157,28 @@ section{
 
 /* CTA FINAL */
 .cta{
-    background:linear-gradient(135deg,#123B8F,#2F6BFF);
+    background:linear-gradient(135deg,#0f2f63,#1e5db8);
     color:white;
     text-align:center;
+    padding:100px 20px;
 }
 
 .cta h2{
-    font-size:34px;
-    margin-bottom:20px;
+    font-size:36px;
+    margin-bottom:25px;
+    font-weight:800;
 }
 
 /* FOOTER */
 footer{
-    background:#123B8F;
+    background:#0f2f63;
     color:white;
     text-align:center;
-    padding:30px;
+    padding:30px 20px;
     font-size:14px;
 }
 
-/* ANIMAÇÃO */
+/* ANIMAÇÃO FLOAT */
 @keyframes float{
     0%{transform:translateY(0px);}
     50%{transform:translateY(-15px);}
@@ -185,93 +188,101 @@ footer{
 /* RESPONSIVO */
 @media(max-width:768px){
     .hero h1{
-        font-size:30px;
+        font-size:28px;
+    }
+
+    .mockup img{
+        width:280px;
+    }
+
+    header img{
+        width:140px;
     }
 }
 </style>
 </head>
 <body>
 
-<!-- LOGO -->
-<div class="logo-bar">
+<!-- HEADER -->
+<header>
     <img src="logo.png" alt="ComCristo Logo">
-</div>
+</header>
 
 <!-- HERO -->
 <section class="hero">
-    <div class="container">
-        <h1>Viva a Palavra todos os dias</h1>
-        <p>O ComCristo foi criado para ajudar você a criar constância espiritual com leveza, profundidade e propósito.</p>
-        <a class="btn-primary">Lançamento em breve</a>
-        <small>Disponível apenas para Android no momento</small>
+    <h1>Viva a Palavra todos os dias</h1>
+    <p>O ComCristo foi criado para ajudar você a criar constância espiritual com leveza, profundidade e propósito.</p>
+    <a class="btn-primary">Lançamento em breve</a>
+    <small>Disponível apenas para Android no momento</small>
 
-        <div class="mockup">
-            <img src="mockup.png" alt="App ComCristo">
-        </div>
+    <div class="mockup">
+        <img src="mockup.png" alt="App ComCristo">
     </div>
 </section>
 
 <!-- FUNCIONALIDADES -->
 <section class="features">
-    <div class="container">
-        <h2>Funcionalidades do Aplicativo</h2>
+    <h2>Funcionalidades do Aplicativo</h2>
 
-        <div class="card">
+    <div class="card">
+        <div class="icon-circle">
             <img src="icon-versiculo.png">
-            <h3>Versículo Diário</h3>
-            <p>A palavra de Deus todos os dias, com notificação no horário que você escolher.</p>
         </div>
-
-        <div class="card">
-            <img src="icon-devocional.png">
-            <h3>Devocional</h3>
-            <p>Devocional completo todos os dias para manter sua fé viva.</p>
-        </div>
-
-        <div class="card">
-            <img src="icon-biblia.png">
-            <h3>Bíblia Sagrada</h3>
-            <p>Leitura organizada por livros e capítulos com marcação de versículos.</p>
-        </div>
-
-        <div class="card">
-            <img src="icon-favoritos.png">
-            <h3>Favoritos</h3>
-            <p>Salve e organize versículos importantes para revisar depois.</p>
-        </div>
-
+        <h3>Versículo Diário</h3>
+        <p>A palavra de Deus todos os dias, com notificação no horário que você escolher.</p>
     </div>
+
+    <div class="card">
+        <div class="icon-circle">
+            <img src="icon-devocional.png">
+        </div>
+        <h3>Devocional</h3>
+        <p>Devocional completo todos os dias para manter sua fé viva.</p>
+    </div>
+
+    <div class="card">
+        <div class="icon-circle">
+            <img src="icon-biblia.png">
+        </div>
+        <h3>Bíblia Sagrada</h3>
+        <p>Leitura organizada por livros e capítulos com marcação de versículos.</p>
+    </div>
+
+    <div class="card">
+        <div class="icon-circle">
+            <img src="icon-favoritos.png">
+        </div>
+        <h3>Favoritos</h3>
+        <p>Salve e organize versículos importantes para revisar depois.</p>
+    </div>
+
 </section>
 
 <!-- BENEFÍCIOS -->
 <section class="benefits">
-    <div class="container">
-        <h2>Por que usar o ComCristo?</h2>
+    <h2>Por que usar o ComCristo?</h2>
 
-        <div class="benefit-box">
-            <h3>Constância</h3>
-            <p>Ferramentas que ajudam você a manter disciplina espiritual diária.</p>
-        </div>
-
-        <div class="benefit-box">
-            <h3>Organização</h3>
-            <p>Seu progresso salvo e organizado dentro do aplicativo.</p>
-        </div>
-
-        <div class="benefit-box">
-            <h3>Leveza</h3>
-            <p>Design minimalista e focado na Palavra.</p>
-        </div>
-
+    <div class="benefit-box">
+        <h3>Constância</h3>
+        <p>Ferramentas que ajudam você a manter disciplina espiritual diária.</p>
     </div>
+
+    <div class="benefit-box">
+        <h3>Organização</h3>
+        <p>Seu progresso salvo e organizado dentro do aplicativo.</p>
+    </div>
+
+    <div class="benefit-box">
+        <h3>Leveza</h3>
+        <p>Design minimalista e focado na Palavra.</p>
+    </div>
+
 </section>
 
 <!-- CTA FINAL -->
 <section class="cta">
-    <div class="container">
-        <h2>Em breve você poderá começar uma nova jornada!</h2>
-        <a class="btn-primary">Lançamento em breve</a>
-    </div>
+    <h2>Em breve você poderá começar uma nova jornada!</h2>
+    <a class="btn-primary">Lançamento em breve</a>
 </section>
 
 <footer>
