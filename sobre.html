@@ -101,6 +101,35 @@ p{
     margin-bottom:15px;
 }
 
+/* REDES SOCIAIS */
+.social-box{
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+    margin-top:30px;
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.6s;
+}
+
+.social-box.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.social-links a{
+    display:block;
+    margin-top:10px;
+    font-weight:600;
+    color:#1e5db8;
+    text-decoration:none;
+}
+
+.social-links a:hover{
+    text-decoration:underline;
+}
+
 /* BOTÕES */
 .btn {
     display: inline-block;
@@ -183,7 +212,24 @@ footer {
             <p><strong>Pix:</strong> comcristoapp@gmail.com</p>
 
             <a class="btn" onclick="copiarPix()">Copiar chave Pix</a>
-            <a class="btn" href="#">Apoiar com cartão</a>
+            <a class="btn" href="https://link.mercadopago.com.br/andresantosdsn" target="_blank">
+                Apoiar com cartão
+            </a>
+        </div>
+
+        <div class="social-box">
+            <h2>Redes Sociais</h2>
+            <p>Siga no Instagram e acompanhe conteúdos, mensagens e novidades sobre o aplicativo.</p>
+
+            <div class="social-links">
+                <a href="https://www.instagram.com/andresantosofic" target="_blank">
+                    Instagram do Criador
+                </a>
+
+                <a href="https://www.instagram.com/comcristo.app" target="_blank">
+                    Instagram do Aplicativo
+                </a>
+            </div>
         </div>
 
         <a href="index.html" class="voltar">← Voltar para o site</a>
@@ -201,7 +247,7 @@ function copiarPix(){
     alert("Chave Pix copiada!");
 }
 
-const elements = document.querySelectorAll('.card-white, .support-box');
+const elements = document.querySelectorAll('.card-white, .support-box, .social-box');
 
 function showOnScroll(){
     const trigger = window.innerHeight * 0.85;
