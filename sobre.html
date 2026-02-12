@@ -79,14 +79,15 @@ p{
     transform:translateY(0);
 }
 
-/* SUPPORT BOX MAIS IMPACTANTE */
+/* ===== SUPPORT BOX PREMIUM ===== */
+
 .support-box {
-    background: linear-gradient(135deg, #0d2c5c, #1e5db8);
+    background: linear-gradient(135deg, #0c254f, #1e5db8);
     color: white;
-    padding: 45px;
-    border-radius: 30px;
-    margin-top: 50px;
-    box-shadow:0 25px 60px rgba(0,0,0,0.25);
+    padding: 50px;
+    border-radius: 35px;
+    margin-top: 60px;
+    box-shadow:0 35px 80px rgba(0,0,0,0.35);
     position:relative;
     overflow:hidden;
     opacity:0;
@@ -94,12 +95,12 @@ p{
     transition:0.6s;
 }
 
-/* brilho leve */
+/* efeito luz premium */
 .support-box::before{
     content:"";
     position:absolute;
-    top:-50%;
-    left:-50%;
+    top:-40%;
+    left:-40%;
     width:200%;
     height:200%;
     background:radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
@@ -112,27 +113,29 @@ p{
 }
 
 .support-box h2{
+    font-size:28px;
     margin-bottom:15px;
-    font-size:26px;
 }
 
 /* destaque pix */
 .pix-highlight{
     background:rgba(255,255,255,0.15);
-    padding:15px;
-    border-radius:15px;
-    margin:20px 0;
+    padding:18px;
+    border-radius:18px;
+    margin:25px 0;
     font-weight:600;
+    font-size:16px;
+    text-align:center;
 }
 
 /* BOTÕES */
 .btn {
     display: inline-block;
     margin-top: 20px;
-    padding: 14px 30px;
+    padding: 15px 32px;
     background: white;
     color: #1e5db8;
-    border-radius: 40px;
+    border-radius: 50px;
     font-weight: 700;
     text-decoration: none;
     transition:0.3s;
@@ -140,7 +143,29 @@ p{
 }
 
 .btn:hover{
-    transform:scale(1.07);
+    transform:scale(1.08);
+}
+
+/* CONTADOR */
+.counter-box{
+    margin-top:35px;
+    background:rgba(255,255,255,0.12);
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+}
+
+.counter-box h3{
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:5px;
+    opacity:0.9;
+}
+
+.counter-value{
+    font-size:26px;
+    font-weight:800;
+    margin-bottom:15px;
 }
 
 /* selo segurança */
@@ -179,7 +204,7 @@ p{
     text-decoration:underline;
 }
 
-/* BOTÃO VOLTAR */
+/* VOLTAR */
 .voltar{
     display:inline-block;
     margin-top:30px;
@@ -219,60 +244,70 @@ footer {
 </section>
 
 <section>
-    <div class="container">
+<div class="container">
 
-        <div class="card-white">
-            <h2>Sobre o Criador</h2>
-            <p>Meu nome é André Santos, sou cristão, criador de conteúdo e designer.</p>
-            <p>Cresci na religião católica, mas vivi uma vida distante de Cristo e de seus ensinamentos.</p>
-            <p>Minha caminhada com Cristo realmente começou em 31 de julho de 2025, uma data que marcou profundamente a minha vida, o dia em que me converti e voltei para os braços do meu Pai e Senhor Jesus Cristo.</p>
-            <p>De lá pra cá, vários desejos e sonhos vieram em meu coração e um deles é este aplicativo.</p>
-        </div>
+<div class="card-white">
+<h2>Sobre o Criador</h2>
+<p>Meu nome é André Santos, sou cristão, criador de conteúdo e designer.</p>
+<p>Cresci na religião católica, mas vivi uma vida distante de Cristo e de seus ensinamentos.</p>
+<p>Minha caminhada com Cristo realmente começou em 31 de julho de 2025, uma data que marcou profundamente a minha vida, o dia em que me converti e voltei para os braços do meu Pai e Senhor Jesus Cristo.</p>
+<p>De lá pra cá, vários desejos e sonhos vieram em meu coração e um deles é este aplicativo.</p>
+</div>
 
-        <div class="card-white">
-            <h2>Sobre o aplicativo e nosso projeto</h2>
-            <p>Este aplicativo foi pensado para ser um companheiro diário de fé, um espaço onde você pode encontrar a Bíblia, versículos para o seu dia, devocionais e conteúdos que fortalecem o coração e renovam a esperança.</p>
-            <p>Além do cuidado espiritual, o Com Cristo também carrega um propósito social. Aqui, você tem a opção de ofertar um valor que venha do seu coração, contribuindo para que crianças, famílias e pessoas em situação de necessidade tenham acesso à Palavra de Deus e a projetos de apoio. Cada contribuição é um gesto de amor que gera impacto real.</p>
-            <p>O objetivo é crescer junto com você e tornar o Com Cristo cada vez mais útil, bonito e significativo.</p>
-        </div>
+<div class="card-white">
+<h2>Sobre o aplicativo e nosso projeto</h2>
+<p>Este aplicativo foi pensado para ser um companheiro diário de fé...</p>
+<p>Além do cuidado espiritual, o Com Cristo também carrega um propósito social...</p>
+<p>O objetivo é crescer junto com você e tornar o Com Cristo cada vez mais útil, bonito e significativo.</p>
+</div>
 
-        <div class="support-box">
-            <h2>Apoie este projeto cristão</h2>
-            <p>Este é um projeto totalmente independente. Sua contribuição ajuda na manutenção do aplicativo e em ações sociais.</p>
+<!-- SUPPORT PREMIUM -->
+<div class="support-box">
+<h2>Apoie este projeto cristão</h2>
+<p>Este é um projeto totalmente independente. Sua contribuição ajuda na manutenção do aplicativo e em ações sociais.</p>
 
-            <div class="pix-highlight">
-                Pix: comcristoapp@gmail.com
-            </div>
+<div class="pix-highlight">
+Pix: comcristoapp@gmail.com
+</div>
 
-            <a class="btn" onclick="copiarPix()">Copiar chave Pix</a>
-            <a class="btn" href="https://link.mercadopago.com.br/andresantosdsn" target="_blank">
-                Apoiar com cartão
-            </a>
+<a class="btn" onclick="copiarPix()">Copiar chave Pix</a>
+<a class="btn" href="https://link.mercadopago.com.br/andresantosdsn" target="_blank">
+Apoiar com cartão
+</a>
 
-            <div class="security">
-                🔒 Pagamento 100% seguro via Mercado Pago.  
-                Seus dados são protegidos e criptografados.
-            </div>
-        </div>
+<div class="counter-box">
+<h3>Valor recebido</h3>
+<div class="counter-value" id="valor">R$ 0,00</div>
 
-        <div class="social-box">
-            <h2>Redes Sociais</h2>
-            <p>Siga no Instagram e acompanhe conteúdos, mensagens e novidades sobre o aplicativo.</p>
+<h3>Pessoas ajudadas</h3>
+<div class="counter-value" id="pessoas">0</div>
+</div>
 
-            <div class="social-links">
-                <a href="https://www.instagram.com/andresantosofic" target="_blank">
-                    Instagram do Criador
-                </a>
+<div class="security">
+🔒 Pagamento 100% seguro via Mercado Pago.  
+Seus dados são protegidos e criptografados.
+</div>
 
-                <a href="https://www.instagram.com/comcristo.app" target="_blank">
-                    Instagram do Aplicativo
-                </a>
-            </div>
-        </div>
+</div>
 
-        <a href="index.html" class="voltar">← Voltar para o site</a>
+<div class="social-box">
+<h2>Redes Sociais</h2>
+<p>Siga no Instagram e acompanhe conteúdos, mensagens e novidades sobre o aplicativo.</p>
 
-    </div>
+<div class="social-links">
+<a href="https://www.instagram.com/andresantosofic" target="_blank">
+Instagram do Criador
+</a>
+
+<a href="https://www.instagram.com/comcristo.app" target="_blank">
+Instagram do Aplicativo
+</a>
+</div>
+</div>
+
+<a href="index.html" class="voltar">← Voltar para o site</a>
+
+</div>
 </section>
 
 <footer>
@@ -281,20 +316,20 @@ footer {
 
 <script>
 function copiarPix(){
-    navigator.clipboard.writeText("comcristoapp@gmail.com");
-    alert("Chave Pix copiada!");
+navigator.clipboard.writeText("comcristoapp@gmail.com");
+alert("Chave Pix copiada!");
 }
 
 const elements = document.querySelectorAll('.card-white, .support-box, .social-box');
 
 function showOnScroll(){
-    const trigger = window.innerHeight * 0.85;
-    elements.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        if(top < trigger){
-            el.classList.add('show');
-        }
-    });
+const trigger = window.innerHeight * 0.85;
+elements.forEach(el => {
+const top = el.getBoundingClientRect().top;
+if(top < trigger){
+el.classList.add('show');
+}
+});
 }
 
 window.addEventListener('scroll', showOnScroll);
