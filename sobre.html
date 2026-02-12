@@ -69,17 +69,10 @@ p{
     border-radius: 25px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.08);
     margin-bottom: 25px;
-    opacity:0;
-    transform:translateY(40px);
-    transition:0.6s;
 }
 
-.card-white.show{
-    opacity:1;
-    transform:translateY(0);
-}
+/* ===== SUPPORT BOX PREMIUM ===== */
 
-/* SUPPORT BOX PREMIUM */
 .support-box {
     background: linear-gradient(135deg, #0c254f, #1e5db8);
     color: white;
@@ -87,27 +80,6 @@ p{
     border-radius: 35px;
     margin-top: 60px;
     box-shadow:0 35px 80px rgba(0,0,0,0.35);
-    position:relative;
-    overflow:hidden;
-    opacity:0;
-    transform:translateY(40px);
-    transition:0.6s;
-}
-
-.support-box::before{
-    content:"";
-    position:absolute;
-    top:-40%;
-    left:-40%;
-    width:200%;
-    height:200%;
-    background:radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
-    transform:rotate(25deg);
-}
-
-.support-box.show{
-    opacity:1;
-    transform:translateY(0);
 }
 
 .support-box h2{
@@ -125,14 +97,14 @@ p{
     text-align:center;
 }
 
-/* BOTÕES */
+/* BOTÕES PADRÃO ORIGINAL */
 .btn {
     display: inline-block;
     margin-top: 20px;
-    padding: 15px 32px;
+    padding: 14px 30px;
     background: white;
     color: #1e5db8;
-    border-radius: 50px;
+    border-radius: 40px;
     font-weight: 700;
     text-decoration: none;
     transition:0.3s;
@@ -142,9 +114,10 @@ p{
 }
 
 .btn:hover{
-    transform:scale(1.08);
+    transform:scale(1.05);
 }
 
+/* CONTADOR */
 .counter-box{
     margin-top:35px;
     background:rgba(255,255,255,0.12);
@@ -157,7 +130,6 @@ p{
     font-size:16px;
     font-weight:600;
     margin-bottom:5px;
-    opacity:0.9;
 }
 
 .counter-value{
@@ -172,20 +144,13 @@ p{
     opacity:0.9;
 }
 
+/* REDES */
 .social-box{
     background:white;
     padding:35px;
     border-radius:25px;
     box-shadow:0 15px 40px rgba(0,0,0,0.08);
     margin-top:30px;
-    opacity:0;
-    transform:translateY(40px);
-    transition:0.6s;
-}
-
-.social-box.show{
-    opacity:1;
-    transform:translateY(0);
 }
 
 .social-links a{
@@ -214,12 +179,6 @@ footer {
     text-align: center;
     padding: 25px;
     margin-top:60px;
-}
-
-@media(max-width:768px){
-    .hero h1{
-        font-size:28px;
-    }
 }
 </style>
 </head>
@@ -250,9 +209,7 @@ footer {
 
 <div class="card-white">
 <h2>Sobre o aplicativo e nosso projeto</h2>
-<p>Este aplicativo foi pensado para ser um companheiro diário de fé, um espaço onde você pode encontrar a Bíblia, versículos para o seu dia, devocionais e conteúdos que fortalecem o coração e renovam a esperança.</p>
-<p>Além do cuidado espiritual, o Com Cristo também carrega um propósito social. Aqui, você tem a opção de ofertar um valor que venha do seu coração, contribuindo para que crianças, famílias e pessoas em situação de necessidade tenham acesso à Palavra de Deus e a projetos de apoio. Cada contribuição é um gesto de amor que gera impacto real.</p>
-<p>O objetivo é crescer junto com você e tornar o Com Cristo cada vez mais útil, bonito e significativo.</p>
+<p>Este aplicativo foi pensado para ser um companheiro diário de fé...</p>
 </div>
 
 <div class="support-box">
@@ -263,9 +220,13 @@ footer {
 Pix: comcristoapp@gmail.com
 </div>
 
-<button class="btn" onclick="copiarPix()">Copiar chave Pix</button>
+<!-- BOTÕES FUNCIONANDO -->
+<button class="btn" id="copiarPixBtn">Copiar chave Pix</button>
 
-<a class="btn" href="https://link.mercadopago.com.br/andresantosdsn" target="_blank">
+<a class="btn" 
+   href="https://link.mercadopago.com.br/andresantosdsn" 
+   target="_blank" 
+   rel="noopener noreferrer">
 Apoiar com cartão
 </a>
 
@@ -285,16 +246,11 @@ Apoiar com cartão
 
 <div class="social-box">
 <h2>Redes Sociais</h2>
-<p>Siga no Instagram e acompanhe conteúdos, mensagens e novidades sobre o aplicativo.</p>
+<p>Siga no Instagram e acompanhe conteúdos e novidades.</p>
 
 <div class="social-links">
-<a href="https://www.instagram.com/andresantosofic" target="_blank">
-Instagram do Criador
-</a>
-
-<a href="https://www.instagram.com/comcristo.app" target="_blank">
-Instagram do Aplicativo
-</a>
+<a href="https://www.instagram.com/andresantosofic" target="_blank">Instagram do Criador</a>
+<a href="https://www.instagram.com/comcristo.app" target="_blank">Instagram do Aplicativo</a>
 </div>
 </div>
 
@@ -308,38 +264,19 @@ Instagram do Aplicativo
 </footer>
 
 <script>
-function copiarPix() {
+document.getElementById("copiarPixBtn").addEventListener("click", function() {
     const chave = "comcristoapp@gmail.com";
 
-    if (navigator.clipboard) {
-        navigator.clipboard.writeText(chave).then(() => {
-            alert("Chave Pix copiada com sucesso!");
-        });
-    } else {
-        const input = document.createElement("input");
-        input.value = chave;
-        document.body.appendChild(input);
-        input.select();
-        document.execCommand("copy");
-        document.body.removeChild(input);
-        alert("Chave Pix copiada com sucesso!");
-    }
-}
+    const input = document.createElement("input");
+    input.value = chave;
+    document.body.appendChild(input);
+    input.select();
+    input.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    document.body.removeChild(input);
 
-const elements = document.querySelectorAll('.card-white, .support-box, .social-box');
-
-function showOnScroll(){
-const trigger = window.innerHeight * 0.85;
-elements.forEach(el => {
-const top = el.getBoundingClientRect().top;
-if(top < trigger){
-el.classList.add('show');
-}
+    alert("Chave Pix copiada com sucesso!");
 });
-}
-
-window.addEventListener('scroll', showOnScroll);
-showOnScroll();
 </script>
 
 </body>
