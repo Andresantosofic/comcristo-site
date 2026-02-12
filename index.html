@@ -59,7 +59,7 @@ p {
 }
 
 .hero h1 {
-    font-size: 36px; /* DIMINUÍDO */
+    font-size: 36px;
     margin-bottom: 20px;
     animation: fadeUp 1s ease forwards;
 }
@@ -115,13 +115,13 @@ p {
     position: absolute;
     background: white;
     color: #1e5db8;
-    padding: 8px 18px; /* MENOR */
+    padding: 8px 18px;
     border-radius: 40px;
     font-weight: 600;
-    font-size: 14px; /* MENOR */
+    font-size: 14px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     white-space: nowrap;
-    z-index: 2; /* NA FRENTE DO MOCKUP */
+    z-index: 2;
     animation: floatCard 4s ease-in-out infinite;
 }
 
@@ -169,33 +169,11 @@ p {
     margin-bottom: 10px;
 }
 
-/* BENEFÍCIOS */
-.benefits {
-    text-align: center;
-    padding-top: 40px;
-    margin-top: -30px;
-}
-
-.benefit-box {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.6s;
-}
-
-.benefit-box.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 /* SOBRE CARD */
 .about-preview {
     text-align: center;
-    padding: 70px 20px;
+    padding: 60px 20px; /* DIMINUÍDO */
+    margin-bottom: 10px; /* MENOS ESPAÇO */
 }
 
 .about-card {
@@ -212,6 +190,29 @@ p {
 
 .about-card p {
     margin-bottom: 25px;
+}
+
+/* BENEFÍCIOS */
+.benefits {
+    text-align: center;
+    padding-top: 30px; /* DIMINUÍDO */
+    margin-top: 0; /* REMOVIDO ESPAÇO GRANDE */
+}
+
+.benefit-box {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s;
+}
+
+.benefit-box.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* CTA */
@@ -307,6 +308,18 @@ footer {
     </div>
 </section>
 
+<!-- AGORA PRIMEIRO O SOBRE -->
+<section class="about-preview">
+    <div class="container">
+        <div class="about-card">
+            <h2>Saiba mais sobre o criador, o aplicativo e o projeto</h2>
+            <p>Conheça a história por trás do ComCristo e como você pode fazer parte desse propósito.</p>
+            <a href="sobre.html" class="btn-primary">Saiba mais</a>
+        </div>
+    </div>
+</section>
+
+<!-- DEPOIS O POR QUE USAR -->
 <section class="benefits">
     <div class="container">
         <h2>Por que usar o ComCristo?</h2>
@@ -324,16 +337,6 @@ footer {
         <div class="benefit-box">
             <h3>Leveza</h3>
             <p>Design minimalista e focado na Palavra.</p>
-        </div>
-    </div>
-</section>
-
-<section class="about-preview">
-    <div class="container">
-        <div class="about-card">
-            <h2>Saiba mais sobre o criador, o aplicativo e o projeto</h2>
-            <p>Conheça a história por trás do ComCristo e como você pode fazer parte desse propósito.</p>
-            <a href="sobre.html" class="btn-primary">Saiba mais</a>
         </div>
     </div>
 </section>
