@@ -59,7 +59,7 @@ p {
 }
 
 .hero h1 {
-    font-size: 42px;
+    font-size: 36px; /* DIMINUÍDO */
     margin-bottom: 20px;
     animation: fadeUp 1s ease forwards;
 }
@@ -102,7 +102,7 @@ p {
 }
 
 .mockup img {
-    width: 300px;
+    width: 320px;
     max-width: 100%;
     animation: floatAdvanced 5s ease-in-out infinite;
     filter: drop-shadow(0 25px 35px rgba(0,0,0,0.35));
@@ -115,16 +115,18 @@ p {
     position: absolute;
     background: white;
     color: #1e5db8;
-    padding: 12px 22px;
+    padding: 8px 18px; /* MENOR */
     border-radius: 40px;
     font-weight: 600;
+    font-size: 14px; /* MENOR */
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     white-space: nowrap;
-    z-index: 5;
+    z-index: 2; /* NA FRENTE DO MOCKUP */
+    animation: floatCard 4s ease-in-out infinite;
 }
 
 .card-top-left {
-    top: 2%;
+    top: 5%;
     left: 8%;
 }
 
@@ -159,6 +161,14 @@ p {
     transform: translateY(0);
 }
 
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
 /* BENEFÍCIOS */
 .benefits {
     text-align: center;
@@ -182,18 +192,18 @@ p {
     transform: translateY(0);
 }
 
-/* ===== CARD AZUL SOBRE ===== */
+/* SOBRE CARD */
 .about-preview {
     text-align: center;
-    padding: 60px 20px;
+    padding: 70px 20px;
 }
 
 .about-card {
     background: linear-gradient(135deg, #0f2f63, #1e5db8);
     color: white;
-    padding: 50px;
-    border-radius: 30px;
-    box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 
 .about-card h2 {
@@ -202,10 +212,9 @@ p {
 
 .about-card p {
     margin-bottom: 25px;
-    opacity: 0.95;
 }
 
-/* CTA FINAL */
+/* CTA */
 .cta {
     background: linear-gradient(135deg, #0f2f63, #1e5db8);
     color: white;
@@ -237,8 +246,20 @@ footer {
     50%  { transform: translateY(-18px) rotate(-4deg); }
     100% { transform: translateY(0px) rotate(-6deg); }
 }
+
+@keyframes floatCard {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+/* RESPONSIVO */
+@media(max-width:768px){
+    .hero h1 { font-size: 26px; }
+}
 </style>
 </head>
+
 <body>
 
 <div class="topbar">
@@ -307,7 +328,6 @@ footer {
     </div>
 </section>
 
-<!-- CARD AZUL RECOLOCADO -->
 <section class="about-preview">
     <div class="container">
         <div class="about-card">
