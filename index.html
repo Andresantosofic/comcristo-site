@@ -14,269 +14,133 @@
 <meta property="og:type" content="website">
 
 <link rel="icon" type="image/png" href="logo.png">
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:'Poppins',sans-serif;
-background:#f5f7fa;
-color:#1a1a1a;
-overflow-x:hidden;
-}
-
-/* SUAVIZAÇÃO GERAL */
-section{
-padding:70px 20px;
-}
-
-.container{
-max-width:1100px;
-margin:auto;
-}
-
-h1,h2{
-font-weight:800;
-letter-spacing:-0.5px;
-}
-
-p{
-line-height:1.7;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:#f5f7fa;color:#1a1a1a;overflow-x:hidden;}
+section{padding:70px 20px;}
+.container{max-width:1100px;margin:auto;}
+h1,h2{font-weight:800;letter-spacing:-0.5px;}
+p{line-height:1.7;}
 
 /* TOPO */
-.topbar{
-background:white;
-padding:6px;
-text-align:center;
-box-shadow:0 5px 20px rgba(0,0,0,0.05);
-}
-
-.topbar img{
-height:58px;
-}
+.topbar{background:white;padding:6px;text-align:center;box-shadow:0 5px 20px rgba(0,0,0,0.05);}
+.topbar img{height:58px;}
 
 /* HERO */
-.hero{
-background:linear-gradient(135deg,#0f2f63,#1e5db8);
-color:white;
-text-align:center;
-position:relative;
-overflow:hidden;
-}
+.hero{background:linear-gradient(135deg,#0f2f63,#1e5db8);color:white;text-align:center;position:relative;overflow:hidden;}
+.hero h1{font-size:34px;margin-bottom:20px;animation:fadeUp 1s ease forwards;}
+.hero p{max-width:600px;margin:auto;opacity:0.95;animation:fadeUp 1.4s ease forwards;}
 
-.hero h1{
-font-size:34px;
-margin-bottom:20px;
-animation:fadeUp 1s ease forwards;
-}
-
-.hero p{
-max-width:600px;
-margin:auto;
-opacity:0.95;
-animation:fadeUp 1.4s ease forwards;
-}
-
-/* BOTÃO PRINCIPAL MAIS PREMIUM */
 .btn-primary{
-margin-top:30px;
-background:white;
-color:#1e5db8;
-padding:16px 38px;
-border-radius:50px;
-font-weight:700;
-display:inline-block;
-transition:all 0.3s ease;
-animation:fadeUp 1.8s ease forwards;
-text-decoration:none;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
+margin-top:30px;background:white;color:#1e5db8;padding:16px 38px;border-radius:50px;
+font-weight:700;display:inline-block;transition:all .3s ease;animation:fadeUp 1.8s ease forwards;
+text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(0,0,0,0.3);}
+.hero small{display:block;margin-top:15px;opacity:0.85;}
 
-.btn-primary:hover{
-transform:translateY(-3px);
-box-shadow:0 15px 35px rgba(0,0,0,0.3);
-}
-
-.hero small{
-display:block;
-margin-top:15px;
-opacity:0.85;
-}
-
-/* MOCKUP (NÃO ALTERADO) */
-.mockup{
-position:relative;
-text-align:center;
-margin-top:60px;
-}
-
+/* MOCKUP */
+.mockup{position:relative;text-align:center;margin-top:60px;}
 .mockup img{
-width:320px;
-max-width:100%;
+width:320px;max-width:100%;
 animation:floatAdvanced 5s ease-in-out infinite;
 filter:drop-shadow(0 25px 35px rgba(0,0,0,0.35));
-position:relative;
-z-index:1;
+position:relative;z-index:1;
 }
 
-/* CARDS FLUTUANTES (LEVE REFINO) */
+/* FLOATING CARDS */
 .floating-card{
-position:absolute;
-background:white;
-color:#1e5db8;
-padding:8px 18px;
-border-radius:40px;
-font-weight:600;
-font-size:14px;
-box-shadow:0 15px 30px rgba(0,0,0,0.25);
-white-space:nowrap;
-z-index:2;
-animation:floatCard 4s ease-in-out infinite;
+position:absolute;background:white;color:#1e5db8;padding:8px 18px;border-radius:40px;
+font-weight:600;font-size:14px;box-shadow:0 15px 30px rgba(0,0,0,0.25);
+white-space:nowrap;z-index:2;animation:floatCard 4s ease-in-out infinite;
 }
-
-.card-top-left{
-top:5%;
-left:8%;
-}
-
-.card-bottom-right{
-bottom:8%;
-right:5%;
-}
+.card-top-left{top:5%;left:8%;}
+.card-bottom-right{bottom:8%;right:5%;}
 
 /* FEATURES */
-.features{
-text-align:center;
-background:#f8fafc;
-}
-
-.features h2{
-margin-bottom:40px;
-color:#0f2f63;
-}
+.features{text-align:center;background:#f8fafc;}
+.features h2{margin-bottom:40px;color:#0f2f63;}
 
 .card{
 background:linear-gradient(135deg,#0f2f63,#1e5db8);
-color:white;
-padding:35px;
-border-radius:25px;
-margin-bottom:25px;
-transition:0.4s;
-opacity:0;
-transform:translateY(40px);
+color:white;padding:35px;border-radius:25px;margin-bottom:25px;
+transition:.4s;opacity:0;transform:translateY(40px);
 box-shadow:0 15px 35px rgba(0,0,0,0.1);
 }
+.card.show{opacity:1;transform:translateY(0);}
+.card:hover{transform:translateY(-5px);}
+.card h3{margin-bottom:10px;}
 
-.card.show{
-opacity:1;
-transform:translateY(0);
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-.card h3{
-margin-bottom:10px;
-}
-
-/* SOBRE PREMIUM */
-.about-preview{
-text-align:center;
-padding:60px 20px;
-}
-
+/* ABOUT PREVIEW */
+.about-preview{text-align:center;padding:60px 20px;}
 .about-card{
 background:linear-gradient(135deg,#0f2f63,#1e5db8);
-color:white;
-padding:45px;
-border-radius:30px;
+color:white;padding:45px;border-radius:30px;
 box-shadow:0 25px 50px rgba(0,0,0,0.15);
 }
 
-.about-card h2{
-margin-bottom:15px;
-}
-
-.about-card p{
-margin-bottom:25px;
-opacity:0.95;
-}
-
-/* BENEFÍCIOS */
-.benefits{
-text-align:center;
-padding-top:30px;
-margin-top:-20px;
-}
-
+/* BENEFITS */
+.benefits{text-align:center;padding-top:30px;margin-top:-20px;}
 .benefit-box{
-background:white;
-padding:30px;
-border-radius:20px;
-margin-bottom:20px;
+background:white;padding:30px;border-radius:20px;margin-bottom:20px;
 box-shadow:0 15px 35px rgba(0,0,0,0.08);
-opacity:0;
-transform:translateY(40px);
-transition:0.6s;
+opacity:0;transform:translateY(40px);transition:.6s;
+}
+.benefit-box.show{opacity:1;transform:translateY(0);}
+
+/* ===== SOBRE COMPLETO ===== */
+.about-full{background:#f8fafc;}
+.card-white{
+background:white;padding:35px;border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,0.08);
+margin-bottom:25px;
 }
 
-.benefit-box.show{
-opacity:1;
-transform:translateY(0);
+/* SUPPORT */
+.support-box{
+background:linear-gradient(135deg,#0c254f,#1e5db8);
+color:white;padding:50px;border-radius:35px;margin-top:40px;
+box-shadow:0 35px 80px rgba(0,0,0,0.35);
+}
+.pix-highlight{
+background:rgba(255,255,255,0.15);
+padding:18px;border-radius:18px;margin:25px 0;
+font-weight:600;text-align:center;
+}
+
+/* BUTTON PADRÃO */
+.btn{
+display:inline-block;margin-top:20px;padding:14px 30px;
+background:white;color:#1e5db8;border-radius:40px;
+font-weight:700;text-decoration:none;cursor:pointer;border:none;
+}
+
+/* SOCIAL */
+.social-box{
+background:white;padding:35px;border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,0.08);
+margin-top:30px;
+}
+.social-links a{
+display:block;margin-top:10px;font-weight:600;
+color:#1e5db8;text-decoration:none;
 }
 
 /* CTA */
-.cta{
-background:linear-gradient(135deg,#0f2f63,#1e5db8);
-color:white;
-text-align:center;
-}
-
-.cta h2{
-font-size:32px;
-margin-bottom:20px;
-}
+.cta{background:linear-gradient(135deg,#0f2f63,#1e5db8);color:white;text-align:center;}
+.cta h2{font-size:32px;margin-bottom:20px;}
 
 /* FOOTER */
-footer{
-background:#0f2f63;
-color:white;
-text-align:center;
-padding:30px 20px;
-font-size:14px;
-}
+footer{background:#0f2f63;color:white;text-align:center;padding:30px 20px;font-size:14px;}
 
-/* ANIMAÇÕES */
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(40px);}
-to{opacity:1;transform:translateY(0);}
-}
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+@keyframes floatAdvanced{0%{transform:translateY(0px) rotate(-6deg);}50%{transform:translateY(-18px) rotate(-4deg);}100%{transform:translateY(0px) rotate(-6deg);}}
+@keyframes floatCard{0%{transform:translateY(0px);}50%{transform:translateY(-8px);}100%{transform:translateY(0px);}}
 
-@keyframes floatAdvanced{
-0%{transform:translateY(0px) rotate(-6deg);}
-50%{transform:translateY(-18px) rotate(-4deg);}
-100%{transform:translateY(0px) rotate(-6deg);}
-}
-
-@keyframes floatCard{
-0%{transform:translateY(0px);}
-50%{transform:translateY(-8px);}
-100%{transform:translateY(0px);}
-}
-
-@media(max-width:768px){
-.hero h1{font-size:26px;}
-}
-
+html{scroll-behavior:smooth;}
 </style>
 </head>
 
@@ -286,6 +150,7 @@ to{opacity:1;transform:translateY(0);}
 <img src="logo.png" alt="ComCristo Logo">
 </div>
 
+<!-- HERO -->
 <section class="hero">
 <div class="container">
 <h1>Viva a Palavra todos os dias</h1>
@@ -301,65 +166,82 @@ to{opacity:1;transform:translateY(0);}
 </div>
 </section>
 
+<!-- FEATURES -->
 <section class="features">
 <div class="container">
 <h2>Funcionalidades do Aplicativo</h2>
 
-<div class="card">
-<h3>📖 Versículo Diário</h3>
-<p>A palavra de Deus todos os dias, com notificação no horário que você escolher.</p>
-</div>
-
-<div class="card">
-<h3>✍️ Devocional</h3>
-<p>Devocional completo todos os dias para manter sua fé viva.</p>
-</div>
-
-<div class="card">
-<h3>📚 Bíblia Sagrada</h3>
-<p>Leitura organizada por livros e capítulos com marcação de versículos.</p>
-</div>
-
-<div class="card">
-<h3>❤️ Favoritos</h3>
-<p>Salve e organize versículos importantes para revisar depois.</p>
-</div>
+<div class="card"><h3>📖 Versículo Diário</h3><p>A palavra de Deus todos os dias, com notificação no horário que você escolher.</p></div>
+<div class="card"><h3>✍️ Devocional</h3><p>Devocional completo todos os dias para manter sua fé viva.</p></div>
+<div class="card"><h3>📚 Bíblia Sagrada</h3><p>Leitura organizada por livros e capítulos com marcação de versículos.</p></div>
+<div class="card"><h3>❤️ Favoritos</h3><p>Salve e organize versículos importantes para revisar depois.</p></div>
 
 </div>
 </section>
 
+<!-- ABOUT PREVIEW -->
 <section class="about-preview">
 <div class="container">
 <div class="about-card">
 <h2>Saiba mais sobre o criador, o aplicativo e o projeto</h2>
 <p>Conheça a história por trás do ComCristo e como você pode fazer parte desse propósito.</p>
-<a href="sobre.html" class="btn-primary">Saiba mais</a>
+<a href="#sobre" class="btn-primary">Saiba mais</a>
 </div>
 </div>
 </section>
 
+<!-- BENEFITS -->
 <section class="benefits">
 <div class="container">
 <h2>Por que usar o ComCristo?</h2>
 
-<div class="benefit-box">
-<h3>Constância</h3>
-<p>Ferramentas que ajudam você a manter disciplina espiritual diária.</p>
+<div class="benefit-box"><h3>Constância</h3><p>Ferramentas que ajudam você a manter disciplina espiritual diária.</p></div>
+<div class="benefit-box"><h3>Organização</h3><p>Seu progresso salvo e organizado dentro do aplicativo.</p></div>
+<div class="benefit-box"><h3>Leveza</h3><p>Design minimalista e focado na Palavra.</p></div>
+
+</div>
+</section>
+
+<!-- ===== SOBRE COMPLETO ===== -->
+<section id="sobre" class="about-full">
+<div class="container">
+
+<div class="card-white">
+<h2>Sobre o Criador</h2>
+<p>Meu nome é André Santos, sou cristão, criador de conteúdo e designer.</p>
+<p>Cresci na religião católica, mas vivi uma vida distante de Cristo e seus ensinamentos.</p>
+<p>Minha caminhada com Cristo começou realmente em 31 de julho de 2025, uma data que marcou profundamente a minha vida.</p>
 </div>
 
-<div class="benefit-box">
-<h3>Organização</h3>
-<p>Seu progresso salvo e organizado dentro do aplicativo.</p>
+<div class="card-white">
+<h2>Sobre o aplicativo e nosso projeto</h2>
+<p>Este aplicativo foi pensado para ser um companheiro diário de fé...</p>
 </div>
 
-<div class="benefit-box">
-<h3>Leveza</h3>
-<p>Design minimalista e focado na Palavra.</p>
+<div class="support-box">
+<h2>Apoie este projeto cristão</h2>
+
+<div class="pix-highlight">Pix: comcristoapp@gmail.com</div>
+
+<button class="btn" onclick="copiarPix()">Copiar chave Pix</button>
+
+<a class="btn" href="https://link.mercadopago.com.br/andresantosdsn" target="_blank">
+Apoiar com cartão
+</a>
+</div>
+
+<div class="social-box">
+<h2>Redes Sociais</h2>
+<div class="social-links">
+<a href="https://instagram.com/_u/andresantosofic" target="_blank">Instagram do criador</a>
+<a href="https://instagram.com/_u/comcristo.app" target="_blank">Instagram do aplicativo</a>
+</div>
 </div>
 
 </div>
 </section>
 
+<!-- CTA -->
 <section class="cta">
 <div class="container">
 <h2>Em breve você poderá começar uma nova jornada!</h2>
@@ -372,18 +254,19 @@ to{opacity:1;transform:translateY(0);}
 </footer>
 
 <script>
-const elements=document.querySelectorAll('.card,.benefit-box');
+function copiarPix(){
+navigator.clipboard.writeText("comcristoapp@gmail.com");
+alert("Chave Pix copiada!");
+}
 
+const elements=document.querySelectorAll('.card,.benefit-box');
 function showOnScroll(){
 const trigger=window.innerHeight*0.85;
 elements.forEach(el=>{
 const top=el.getBoundingClientRect().top;
-if(top<trigger){
-el.classList.add('show');
-}
+if(top<trigger){el.classList.add('show');}
 });
 }
-
 window.addEventListener('scroll',showOnScroll);
 showOnScroll();
 </script>
