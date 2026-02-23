@@ -8,27 +8,16 @@
 
 <meta name="description" content="ComCristo é um aplicativo cristão com devocional diário, versículos e Bíblia organizada para fortalecer sua caminhada com Deus.">
 
-<meta property="og:title" content="ComCristo - Devocional Diário">
-<meta property="og:description" content="Fortaleça sua fé todos os dias com versículos, devocionais e Bíblia organizada.">
-<meta property="og:image" content="mockup.png">
-<meta property="og:type" content="website">
-
 <link rel="icon" type="image/png" href="logo.png">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-font-family:'Poppins',sans-serif;
-background:#f5f7fa;
-color:#1a1a1a;
-overflow-x:hidden;
-}
-
+body{font-family:'Poppins',sans-serif;background:#f5f7fa;color:#1a1a1a;overflow-x:hidden;}
 section{padding:70px 20px;}
 .container{max-width:1100px;margin:auto;}
-h1,h2{font-weight:800;letter-spacing:-0.5px;}
+h1,h2{font-weight:800;}
 p{line-height:1.7;}
 
 /* TOPO */
@@ -68,8 +57,7 @@ padding:16px 38px;
 border-radius:50px;
 font-weight:700;
 display:inline-block;
-transition:all .3s ease;
-animation:fadeUp 1.8s ease forwards;
+transition:all 0.3s ease;
 text-decoration:none;
 box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
@@ -78,7 +66,7 @@ transform:translateY(-3px);
 box-shadow:0 15px 35px rgba(0,0,0,0.3);
 }
 
-.hero small{display:block;margin-top:15px;opacity:.85;}
+.hero small{display:block;margin-top:15px;opacity:0.85;}
 
 /* MOCKUP */
 .mockup{position:relative;text-align:center;margin-top:60px;}
@@ -86,7 +74,7 @@ box-shadow:0 15px 35px rgba(0,0,0,0.3);
 width:320px;
 max-width:100%;
 animation:floatAdvanced 5s ease-in-out infinite;
-filter:drop-shadow(0 25px 35px rgba(0,0,0,.35));
+filter:drop-shadow(0 25px 35px rgba(0,0,0,0.35));
 position:relative;
 z-index:1;
 }
@@ -100,7 +88,7 @@ padding:8px 18px;
 border-radius:40px;
 font-weight:600;
 font-size:14px;
-box-shadow:0 15px 30px rgba(0,0,0,.25);
+box-shadow:0 15px 30px rgba(0,0,0,0.25);
 white-space:nowrap;
 z-index:2;
 animation:floatCard 4s ease-in-out infinite;
@@ -118,59 +106,45 @@ color:white;
 padding:35px;
 border-radius:25px;
 margin-bottom:25px;
-transition:.4s;
+transition:0.4s;
 opacity:0;
 transform:translateY(40px);
-box-shadow:0 15px 35px rgba(0,0,0,.1);
+box-shadow:0 15px 35px rgba(0,0,0,0.1);
 }
 .card.show{opacity:1;transform:translateY(0);}
 .card:hover{transform:translateY(-5px);}
 .card h3{margin-bottom:10px;}
 
-/* BENEFÍCIOS */
-.benefits{text-align:center;padding-top:30px;margin-top:-20px;}
-.benefit-box{
-background:white;
-padding:30px;
-border-radius:20px;
-margin-bottom:20px;
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-opacity:0;
-transform:translateY(40px);
-transition:.6s;
-}
-.benefit-box.show{opacity:1;transform:translateY(0);}
-
 /* SOBRE */
-.about-section{background:#ffffff;}
+.about-section{background:#ffffff;text-align:center;}
 .card-white{
 background:white;
 padding:35px;
 border-radius:25px;
-box-shadow:0 15px 40px rgba(0,0,0,.08);
+box-shadow:0 15px 40px rgba(0,0,0,0.08);
 margin-bottom:25px;
 opacity:0;
 transform:translateY(40px);
-transition:.6s;
+transition:0.6s;
 }
 .card-white.show{opacity:1;transform:translateY(0);}
 
-/* SUPPORT */
+/* SUPPORT PREMIUM */
 .support-box{
 background:linear-gradient(135deg,#0c254f,#1e5db8);
 color:white;
 padding:50px;
 border-radius:35px;
 margin-top:40px;
-box-shadow:0 35px 80px rgba(0,0,0,.35);
+box-shadow:0 35px 80px rgba(0,0,0,0.35);
 opacity:0;
 transform:translateY(40px);
-transition:.6s;
+transition:0.6s;
 }
 .support-box.show{opacity:1;transform:translateY(0);}
 
 .pix-highlight{
-background:rgba(255,255,255,.15);
+background:rgba(255,255,255,0.15);
 padding:18px;
 border-radius:18px;
 margin:25px 0;
@@ -178,47 +152,42 @@ font-weight:600;
 text-align:center;
 }
 
-/* BOTÃO PADRÃO */
 .btn{
 display:inline-block;
-margin-top:20px;
+margin-top:15px;
 padding:14px 30px;
 background:white;
 color:#1e5db8;
 border-radius:40px;
 font-weight:700;
 text-decoration:none;
-transition:.3s;
-margin-right:10px;
 border:none;
 cursor:pointer;
+font-family:'Poppins',sans-serif;
+margin-right:10px;
 }
-.btn:hover{transform:scale(1.05);}
 
-/* CONTADOR */
 .counter-box{
 margin-top:35px;
-background:rgba(255,255,255,.12);
+background:rgba(255,255,255,0.12);
 padding:25px;
 border-radius:20px;
 text-align:center;
 }
-.counter-value{
-font-size:26px;
-font-weight:800;
-margin-bottom:15px;
-}
+.counter-value{font-size:26px;font-weight:800;margin-bottom:15px;}
 
-/* REDES */
+.security{margin-top:20px;font-size:14px;opacity:0.9;}
+
+/* SOCIAL */
 .social-box{
 background:white;
 padding:35px;
 border-radius:25px;
-box-shadow:0 15px 40px rgba(0,0,0,.08);
+box-shadow:0 15px 40px rgba(0,0,0,0.08);
 margin-top:30px;
 opacity:0;
 transform:translateY(40px);
-transition:.6s;
+transition:0.6s;
 }
 .social-box.show{opacity:1;transform:translateY(0);}
 .social-links a{
@@ -229,6 +198,20 @@ color:#1e5db8;
 text-decoration:none;
 }
 
+/* BENEFITS */
+.benefits{text-align:center;}
+.benefit-box{
+background:white;
+padding:30px;
+border-radius:20px;
+margin-bottom:20px;
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
+opacity:0;
+transform:translateY(40px);
+transition:0.6s;
+}
+.benefit-box.show{opacity:1;transform:translateY(0);}
+
 /* CTA */
 .cta{
 background:linear-gradient(135deg,#0f2f63,#1e5db8);
@@ -237,7 +220,6 @@ text-align:center;
 }
 .cta h2{font-size:32px;margin-bottom:20px;}
 
-/* FOOTER */
 footer{
 background:#0f2f63;
 color:white;
@@ -261,6 +243,10 @@ to{opacity:1;transform:translateY(0);}
 50%{transform:translateY(-8px);}
 100%{transform:translateY(0px);}
 }
+
+@media(max-width:768px){
+.hero h1{font-size:26px;}
+}
 </style>
 </head>
 
@@ -270,6 +256,7 @@ to{opacity:1;transform:translateY(0);}
 <img src="logo.png" alt="ComCristo Logo">
 </div>
 
+<!-- HERO -->
 <section class="hero">
 <div class="container">
 <h1>Viva a Palavra todos os dias</h1>
@@ -285,9 +272,102 @@ to{opacity:1;transform:translateY(0);}
 </div>
 </section>
 
-<script>
-const elements=document.querySelectorAll('.card,.benefit-box,.card-white,.support-box,.social-box');
+<!-- FEATURES -->
+<section class="features">
+<div class="container">
+<h2>Funcionalidades do Aplicativo</h2>
 
+<div class="card"><h3>📖 Versículo Diário</h3><p>A palavra de Deus todos os dias.</p></div>
+<div class="card"><h3>✍️ Devocional</h3><p>Devocional completo todos os dias.</p></div>
+<div class="card"><h3>📚 Bíblia Sagrada</h3><p>Leitura organizada por capítulos.</p></div>
+<div class="card"><h3>❤️ Favoritos</h3><p>Salve versículos importantes.</p></div>
+
+</div>
+</section>
+
+<!-- SOBRE -->
+<section class="about-section">
+<div class="container">
+
+<div class="card-white">
+<h2>Sobre o Criador</h2>
+<p>Meu nome é André Santos, sou cristão, criador de conteúdo e designer.</p>
+<p>Cresci na religião católica, mas vivi uma vida distante de Cristo e seus ensinamentos.</p>
+<p>Minha caminhada com Cristo começou realmente em 31 de julho de 2025...</p>
+</div>
+
+<div class="card-white">
+<h2>Sobre o aplicativo e nosso projeto</h2>
+<p>Este aplicativo foi pensado para ser um companheiro diário de fé...</p>
+</div>
+
+<div class="support-box">
+<h2>Apoie este projeto cristão</h2>
+
+<div class="pix-highlight">
+Pix: comcristoapp@gmail.com
+</div>
+
+<button class="btn" id="copiarPixBtn">Copiar chave Pix</button>
+
+<a class="btn"
+href="https://link.mercadopago.com.br/andresantosdsn"
+target="_blank"
+rel="noopener noreferrer">
+Apoiar com cartão
+</a>
+
+<div class="counter-box">
+<h3>Valor recebido</h3>
+<div class="counter-value">R$ 0,00</div>
+<h3>Pessoas ajudadas</h3>
+<div class="counter-value">0</div>
+</div>
+
+<div class="security">
+🔒 Pagamento 100% seguro via Mercado Pago.
+</div>
+</div>
+
+<div class="social-box">
+<h2>Redes Sociais</h2>
+<p>Siga no Instagram e acompanhe conteúdos.</p>
+<div class="social-links">
+<a href="https://instagram.com/_u/andresantosofic" target="_blank">Instagram do criador</a>
+<a href="https://instagram.com/_u/comcristo.app" target="_blank">Instagram do aplicativo</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+<div class="container">
+<h2>Por que usar o ComCristo?</h2>
+
+<div class="benefit-box"><h3>Constância</h3><p>Disciplina espiritual diária.</p></div>
+<div class="benefit-box"><h3>Organização</h3><p>Seu progresso salvo.</p></div>
+<div class="benefit-box"><h3>Leveza</h3><p>Design focado na Palavra.</p></div>
+
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+<div class="container">
+<h2>Em breve você poderá começar uma nova jornada!</h2>
+<a class="btn-primary">Lançamento em breve</a>
+</div>
+</section>
+
+<footer>
+© 2026 ComCristo • Seu devocional diário • Desenvolvido por André Santos
+</footer>
+
+<script>
+// animações scroll
+const elements=document.querySelectorAll('.card,.benefit-box,.card-white,.support-box,.social-box');
 function showOnScroll(){
 const trigger=window.innerHeight*0.85;
 elements.forEach(el=>{
@@ -298,10 +378,12 @@ if(top<trigger){el.classList.add('show');}
 window.addEventListener('scroll',showOnScroll);
 showOnScroll();
 
-function copiarPix(){
-navigator.clipboard.writeText("comcristoapp@gmail.com");
+// copiar pix
+document.getElementById("copiarPixBtn").addEventListener("click",function(){
+const chave="comcristoapp@gmail.com";
+navigator.clipboard.writeText(chave);
 alert("Chave Pix copiada!");
-}
+});
 </script>
 
 </body>
