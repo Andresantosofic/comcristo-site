@@ -20,6 +20,7 @@ section{padding:55px 20px;}
 h1,h2{font-weight:800;}
 p{line-height:1.7;}
 
+/* TOPO */
 .topbar{
 background:white;
 padding:6px;
@@ -28,6 +29,7 @@ box-shadow:0 5px 20px rgba(0,0,0,0.05);
 }
 .topbar img{height:58px;}
 
+/* HERO */
 .hero{
 background:linear-gradient(135deg,#0f2f63,#1e5db8);
 color:white;
@@ -35,13 +37,11 @@ text-align:center;
 position:relative;
 overflow:hidden;
 }
-
 .hero h1{
 font-size:34px;
 margin-bottom:20px;
 animation:fadeUp 1s ease forwards;
 }
-
 .hero p{
 max-width:600px;
 margin:auto;
@@ -61,7 +61,6 @@ transition:all 0.3s ease;
 text-decoration:none;
 box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
-
 .btn-primary:hover{
 transform:translateY(-3px);
 box-shadow:0 15px 35px rgba(0,0,0,0.3);
@@ -69,8 +68,8 @@ box-shadow:0 15px 35px rgba(0,0,0,0.3);
 
 .hero small{display:block;margin-top:15px;opacity:0.85;}
 
+/* MOCKUP */
 .mockup{position:relative;text-align:center;margin-top:60px;}
-
 .mockup img{
 width:320px;
 max-width:100%;
@@ -80,6 +79,7 @@ position:relative;
 z-index:1;
 }
 
+/* CARDS FLUTUANTES */
 .floating-card{
 position:absolute;
 background:white;
@@ -93,10 +93,10 @@ white-space:nowrap;
 z-index:2;
 animation:floatCard 4s ease-in-out infinite;
 }
-
 .card-top-left{top:5%;left:8%;}
 .card-bottom-right{bottom:8%;right:5%;}
 
+/* FEATURES */
 .features{text-align:center;background:#f8fafc;}
 .features h2{margin-bottom:40px;color:#0f2f63;}
 
@@ -111,13 +111,12 @@ opacity:0;
 transform:translateY(40px);
 box-shadow:0 15px 35px rgba(0,0,0,0.1);
 }
-
 .card.show{opacity:1;transform:translateY(0);}
 .card:hover{transform:translateY(-5px);}
 .card h3{margin-bottom:10px;}
 
+/* SOBRE */
 .about-section{background:#ffffff;text-align:center;}
-
 .card-white{
 background:white;
 padding:35px;
@@ -128,9 +127,9 @@ opacity:0;
 transform:translateY(40px);
 transition:0.6s;
 }
-
 .card-white.show{opacity:1;transform:translateY(0);}
 
+/* SUPPORT PREMIUM */
 .support-box{
 background:linear-gradient(135deg,#0c254f,#1e5db8);
 color:white;
@@ -142,7 +141,6 @@ opacity:0;
 transform:translateY(40px);
 transition:0.6s;
 }
-
 .support-box.show{opacity:1;transform:translateY(0);}
 
 .pix-highlight{
@@ -176,11 +174,11 @@ padding:25px;
 border-radius:20px;
 text-align:center;
 }
-
 .counter-value{font-size:26px;font-weight:800;margin-bottom:15px;}
 
 .security{margin-top:20px;font-size:14px;opacity:0.9;}
 
+/* SOCIAL */
 .social-box{
 background:white;
 padding:35px;
@@ -191,9 +189,7 @@ opacity:0;
 transform:translateY(40px);
 transition:0.6s;
 }
-
 .social-box.show{opacity:1;transform:translateY(0);}
-
 .social-links a{
 display:block;
 margin-top:10px;
@@ -202,8 +198,8 @@ color:#1e5db8;
 text-decoration:none;
 }
 
+/* BENEFITS */
 .benefits{text-align:center;}
-
 .benefit-box{
 background:white;
 padding:30px;
@@ -214,15 +210,14 @@ opacity:0;
 transform:translateY(40px);
 transition:0.6s;
 }
-
 .benefit-box.show{opacity:1;transform:translateY(0);}
 
+/* CTA */
 .cta{
 background:linear-gradient(135deg,#0f2f63,#1e5db8);
 color:white;
 text-align:center;
 }
-
 .cta h2{font-size:32px;margin-bottom:20px;}
 
 footer{
@@ -233,17 +228,16 @@ padding:30px 20px;
 font-size:14px;
 }
 
+/* ANIMAÇÕES */
 @keyframes fadeUp{
 from{opacity:0;transform:translateY(40px);}
 to{opacity:1;transform:translateY(0);}
 }
-
 @keyframes floatAdvanced{
 0%{transform:translateY(0px) rotate(-6deg);}
 50%{transform:translateY(-18px) rotate(-4deg);}
 100%{transform:translateY(0px) rotate(-6deg);}
 }
-
 @keyframes floatCard{
 0%{transform:translateY(0px);}
 50%{transform:translateY(-8px);}
@@ -264,25 +258,18 @@ to{opacity:1;transform:translateY(0);}
 
 <section class="hero">
 <div class="container">
-
 <h1>Viva a Palavra todos os dias</h1>
-
 <p>O ComCristo foi criado para ajudar você a criar constância espiritual com leveza, profundidade e propósito.</p>
-
 <a class="btn-primary">Lançamento em breve</a>
-
 <small>Disponível apenas para Android no momento</small>
 
 <div class="mockup">
-
 <div class="floating-card card-top-left">Devocional Completo</div>
 
 <img id="mockupSlider" src="mockup.png" alt="App ComCristo">
 
 <div class="floating-card card-bottom-right">Poderosa Palavra de Deus</div>
-
 </div>
-
 </div>
 </section>
 
@@ -307,7 +294,7 @@ to{opacity:1;transform:translateY(0);}
 <h2>Sobre o Criador</h2>
 <p>Meu nome é André Santos, sou cristão, criador de conteúdo e designer.</p>
 <p>Cresci na religião católica, mas vivi uma vida distante de Cristo e seus ensinamentos.</p>
-<p>Minha caminhada com Cristo começou realmente em 31 de julho de 2025, uma data que marcou profundamente a minha vida.</p>
+<p>Minha caminhada com Cristo começou realmente em 31 de julho de 2025.</p>
 <p>De lá pra cá, vários desejos e sonhos veio em meu coração e um deles é este aplicativo e projeto.</p>
 </div>
 
@@ -346,25 +333,23 @@ mockupIndex = 0;
 
 document.getElementById("mockupSlider").src = mockups[mockupIndex];
 
-}, 3000);
+},3000);
 
 // animações scroll
 const elements=document.querySelectorAll('.card,.benefit-box,.card-white,.support-box,.social-box');
 
 function showOnScroll(){
 const trigger=window.innerHeight*0.85;
-
 elements.forEach(el=>{
 const top=el.getBoundingClientRect().top;
-if(top<trigger){
-el.classList.add('show');
-}
+if(top<trigger){el.classList.add('show');}
 });
 }
 
 window.addEventListener('scroll',showOnScroll);
 showOnScroll();
 
+// copiar pix
 document.getElementById("copiarPixBtn")?.addEventListener("click",function(){
 navigator.clipboard.writeText("comcristoapp@gmail.com");
 alert("Chave Pix copiada!");
