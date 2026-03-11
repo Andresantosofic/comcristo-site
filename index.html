@@ -247,6 +247,38 @@ to{opacity:1;transform:translateY(0);}
 100%{transform:translateY(0px);}
 }
 
+/* CARROSSEL DE FOTOS */
+
+.foto-slider{
+width:100%;
+overflow:hidden;
+background:#ffffff;
+padding:40px 0;
+}
+
+.slider-track{
+display:flex;
+gap:20px;
+width:max-content;
+animation:scrollFotos 25s linear infinite;
+}
+
+.slider-track img{
+height:260px;
+border-radius:18px;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+@keyframes scrollFotos{
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-50%);
+}
+}
+
 @media(max-width:768px){
 .hero h1{font-size:26px;}
 }
