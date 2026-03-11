@@ -256,6 +256,7 @@ to{opacity:1;transform:translateY(0);}
 <img src="logo.png" alt="ComCristo Logo">
 </div>
 
+<!-- HERO -->
 <section class="hero">
 <div class="container">
 <h1>Viva a Palavra todos os dias</h1>
@@ -265,9 +266,7 @@ to{opacity:1;transform:translateY(0);}
 
 <div class="mockup">
 <div class="floating-card card-top-left">Devocional Completo</div>
-
-<img id="mockupSlider" src="mockup.png" alt="App ComCristo">
-
+<img src="mockup.png" alt="App ComCristo">
 <div class="floating-card card-bottom-right">Poderosa Palavra de Deus</div>
 </div>
 </div>
@@ -293,18 +292,78 @@ to{opacity:1;transform:translateY(0);}
 <div class="card-white">
 <h2>Sobre o Criador</h2>
 <p>Meu nome é André Santos, sou cristão, criador de conteúdo e designer.</p>
-<p>Cresci na religião católica, mas vivi uma vida distante de Cristo e seus ensinamentos.</p>
-<p>Minha caminhada com Cristo começou realmente em 31 de julho de 2025.</p>
+<p>Cresci na religião católica, mas vivi uma vida distante de Cristo e seus
+ensinamentos.</p>
+<p>Minha caminhada com Cristo começou realmente em 31 de julho de 2025,uma data que marcou profundamente a minha vida, o dia em que me converti e voltei para os braços do meu Pai e Senhor Jesus Cristo.</p>
 <p>De lá pra cá, vários desejos e sonhos veio em meu coração e um deles é este aplicativo e projeto.</p>
 </div>
 
 <div class="card-white">
 <h2>Sobre o aplicativo e nosso projeto</h2>
-<p>Este aplicativo foi pensado para ser um companheiro diário de fé.</p>
-<p>Além do cuidado espiritual, o Com Cristo também carrega um propósito social.</p>
-<p>O objetivo é crescer junto com você e tornar o Com Cristo cada vez mais útil.</p>
+<p>Este aplicativo foi pensado para ser um companheiro diário de fé, um espaço onde você pode encontrar a Bíblia, versículos para o seu dia, devocionais e conteúdos que fortalecem o coração e renovam a esperança.</p>
+<p>Além do cuidado espiritual, o Com Cristo também carrega um propósito social. Aqui, você tem a opção de ofertar um valor que venha do seu coração, contribuindo para que crianças, famílias e pessoas em situação de necessidade tenham acesso à Palavra de Deus e a projetos de apoio. Cada contribuição é um gesto de amor que gera impacto real.
+</p>
+<p>O objetivo é crescer junto com você e tornar o Com Cristo cada vez mais útil, bonito e significativo.</p>
 </div>
 
+<div class="support-box">
+<h2>Apoie este projeto cristão</h2>
+<p>Este é um projeto totalmente independente. Sua contribuição ajuda na manutenção do aplicativo e em ações sociais.</p>
+
+<div class="pix-highlight">
+Pix: comcristoapp@gmail.com
+</div>
+
+<button class="btn" id="copiarPixBtn">Copiar chave Pix</button>
+
+<a class="btn"
+href="https://link.mercadopago.com.br/andresantosdsn"
+target="_blank"
+rel="noopener noreferrer">
+Apoiar com cartão
+</a>
+
+<div class="counter-box">
+<h3>Valor recebido</h3>
+<div class="counter-value">R$ 0,00</div>
+<h3>Pessoas ajudadas</h3>
+<div class="counter-value">0</div>
+</div>
+
+<div class="security">
+🔒 Pagamento 100% seguro via Mercado Pago.
+</div>
+</div>
+
+<div class="social-box">
+<h2>Redes Sociais</h2>
+<p>Siga no Instagram e acompanhe conteúdos.</p>
+<div class="social-links">
+<a href="https://instagram.com/_u/andresantosofic" target="_blank">Instagram do criador</a>
+<a href="https://instagram.com/_u/comcristo.app" target="_blank">Instagram do aplicativo</a>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+<div class="container">
+<h2>Por que usar o ComCristo?</h2>
+
+<div class="benefit-box"><h3>Constância</h3><p>Ferramentas que ajudam você a manter disciplina espiritual diária.</p></div>
+<div class="benefit-box"><h3>Organização</h3><p>Seu progresso salvo e organizado dentro do aplicativo.</p></div>
+<div class="benefit-box"><h3>Leveza</h3><p>Design minimalista e focado na Palavra.</p></div>
+
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+<div class="container">
+<h2>Em breve você poderá começar uma nova jornada!</h2>
+<a class="btn-primary">Lançamento em breve</a>
 </div>
 </section>
 
@@ -313,31 +372,8 @@ to{opacity:1;transform:translateY(0);}
 </footer>
 
 <script>
-
-const mockups = [
-"mockup.png",
-"mockup2.png",
-"mockup3.png",
-"mockup4.png"
-];
-
-let mockupIndex = 0;
-
-setInterval(() => {
-
-mockupIndex++;
-
-if(mockupIndex >= mockups.length){
-mockupIndex = 0;
-}
-
-document.getElementById("mockupSlider").src = mockups[mockupIndex];
-
-},3000);
-
 // animações scroll
 const elements=document.querySelectorAll('.card,.benefit-box,.card-white,.support-box,.social-box');
-
 function showOnScroll(){
 const trigger=window.innerHeight*0.85;
 elements.forEach(el=>{
@@ -345,16 +381,15 @@ const top=el.getBoundingClientRect().top;
 if(top<trigger){el.classList.add('show');}
 });
 }
-
 window.addEventListener('scroll',showOnScroll);
 showOnScroll();
 
 // copiar pix
-document.getElementById("copiarPixBtn")?.addEventListener("click",function(){
-navigator.clipboard.writeText("comcristoapp@gmail.com");
+document.getElementById("copiarPixBtn").addEventListener("click",function(){
+const chave="comcristoapp@gmail.com";
+navigator.clipboard.writeText(chave);
 alert("Chave Pix copiada!");
 });
-
 </script>
 
 </body>
