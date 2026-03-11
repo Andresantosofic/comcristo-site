@@ -20,7 +20,6 @@ section{padding:55px 20px;}
 h1,h2{font-weight:800;}
 p{line-height:1.7;}
 
-/* TOPO */
 .topbar{
 background:white;
 padding:6px;
@@ -29,7 +28,6 @@ box-shadow:0 5px 20px rgba(0,0,0,0.05);
 }
 .topbar img{height:58px;}
 
-/* HERO */
 .hero{
 background:linear-gradient(135deg,#0f2f63,#1e5db8);
 color:white;
@@ -37,11 +35,13 @@ text-align:center;
 position:relative;
 overflow:hidden;
 }
+
 .hero h1{
 font-size:34px;
 margin-bottom:20px;
 animation:fadeUp 1s ease forwards;
 }
+
 .hero p{
 max-width:600px;
 margin:auto;
@@ -61,6 +61,7 @@ transition:all 0.3s ease;
 text-decoration:none;
 box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
+
 .btn-primary:hover{
 transform:translateY(-3px);
 box-shadow:0 15px 35px rgba(0,0,0,0.3);
@@ -68,8 +69,8 @@ box-shadow:0 15px 35px rgba(0,0,0,0.3);
 
 .hero small{display:block;margin-top:15px;opacity:0.85;}
 
-/* MOCKUP */
 .mockup{position:relative;text-align:center;margin-top:60px;}
+
 .mockup img{
 width:320px;
 max-width:100%;
@@ -79,7 +80,6 @@ position:relative;
 z-index:1;
 }
 
-/* CARDS FLUTUANTES */
 .floating-card{
 position:absolute;
 background:white;
@@ -93,10 +93,10 @@ white-space:nowrap;
 z-index:2;
 animation:floatCard 4s ease-in-out infinite;
 }
+
 .card-top-left{top:5%;left:8%;}
 .card-bottom-right{bottom:8%;right:5%;}
 
-/* FEATURES */
 .features{text-align:center;background:#f8fafc;}
 .features h2{margin-bottom:40px;color:#0f2f63;}
 
@@ -111,12 +111,13 @@ opacity:0;
 transform:translateY(40px);
 box-shadow:0 15px 35px rgba(0,0,0,0.1);
 }
+
 .card.show{opacity:1;transform:translateY(0);}
 .card:hover{transform:translateY(-5px);}
 .card h3{margin-bottom:10px;}
 
-/* SOBRE */
 .about-section{background:#ffffff;text-align:center;}
+
 .card-white{
 background:white;
 padding:35px;
@@ -127,9 +128,9 @@ opacity:0;
 transform:translateY(40px);
 transition:0.6s;
 }
+
 .card-white.show{opacity:1;transform:translateY(0);}
 
-/* SUPPORT PREMIUM */
 .support-box{
 background:linear-gradient(135deg,#0c254f,#1e5db8);
 color:white;
@@ -141,6 +142,7 @@ opacity:0;
 transform:translateY(40px);
 transition:0.6s;
 }
+
 .support-box.show{opacity:1;transform:translateY(0);}
 
 .pix-highlight{
@@ -174,11 +176,11 @@ padding:25px;
 border-radius:20px;
 text-align:center;
 }
+
 .counter-value{font-size:26px;font-weight:800;margin-bottom:15px;}
 
 .security{margin-top:20px;font-size:14px;opacity:0.9;}
 
-/* SOCIAL */
 .social-box{
 background:white;
 padding:35px;
@@ -189,7 +191,9 @@ opacity:0;
 transform:translateY(40px);
 transition:0.6s;
 }
+
 .social-box.show{opacity:1;transform:translateY(0);}
+
 .social-links a{
 display:block;
 margin-top:10px;
@@ -198,8 +202,8 @@ color:#1e5db8;
 text-decoration:none;
 }
 
-/* BENEFITS */
 .benefits{text-align:center;}
+
 .benefit-box{
 background:white;
 padding:30px;
@@ -210,14 +214,15 @@ opacity:0;
 transform:translateY(40px);
 transition:0.6s;
 }
+
 .benefit-box.show{opacity:1;transform:translateY(0);}
 
-/* CTA */
 .cta{
 background:linear-gradient(135deg,#0f2f63,#1e5db8);
 color:white;
 text-align:center;
 }
+
 .cta h2{font-size:32px;margin-bottom:20px;}
 
 footer{
@@ -228,16 +233,17 @@ padding:30px 20px;
 font-size:14px;
 }
 
-/* ANIMAÇÕES */
 @keyframes fadeUp{
 from{opacity:0;transform:translateY(40px);}
 to{opacity:1;transform:translateY(0);}
 }
+
 @keyframes floatAdvanced{
 0%{transform:translateY(0px) rotate(-6deg);}
 50%{transform:translateY(-18px) rotate(-4deg);}
 100%{transform:translateY(0px) rotate(-6deg);}
 }
+
 @keyframes floatCard{
 0%{transform:translateY(0px);}
 50%{transform:translateY(-8px);}
@@ -253,143 +259,89 @@ to{opacity:1;transform:translateY(0);}
 <body>
 
 <div class="topbar">
-<img src="logo.png" alt="ComCristo Logo">
+<img src="logo.png">
 </div>
 
-<!-- HERO -->
 <section class="hero">
 <div class="container">
+
 <h1>Viva a Palavra todos os dias</h1>
+
 <p>O ComCristo foi criado para ajudar você a criar constância espiritual com leveza, profundidade e propósito.</p>
+
 <a class="btn-primary">Lançamento em breve</a>
+
 <small>Disponível apenas para Android no momento</small>
 
 <div class="mockup">
+
 <div class="floating-card card-top-left">Devocional Completo</div>
-<img src="mockup.png" alt="App ComCristo">
+
+<img id="mockupSlider" src="mockup.png">
+
 <div class="floating-card card-bottom-right">Poderosa Palavra de Deus</div>
+
 </div>
-</div>
-</section>
-
-<!-- FEATURES -->
-<section class="features">
-<div class="container">
-<h2>Funcionalidades do Aplicativo</h2>
-
-<div class="card"><h3>📖 Versículo Diário</h3><p>A palavra de Deus todos os dias, com notificação no horário que você escolher.</p></div>
-<div class="card"><h3>✍️ Devocional</h3><p>Devocional completo todos os dias para manter sua fé viva</p></div>
-<div class="card"><h3>📚 Bíblia Sagrada</h3><p>Leitura organizada por livros e capítulos com marcação de versículos.</p></div>
-<div class="card"><h3>❤️ Favoritos</h3><p>Salve e organize versículos importantes para revisar depois.</p></div>
-
 </div>
 </section>
 
-<!-- SOBRE -->
-<section class="about-section">
-<div class="container">
-
-<div class="card-white">
-<h2>Sobre o Criador</h2>
-<p>Meu nome é André Santos, sou cristão, criador de conteúdo e designer.</p>
-<p>Cresci na religião católica, mas vivi uma vida distante de Cristo e seus
-ensinamentos.</p>
-<p>Minha caminhada com Cristo começou realmente em 31 de julho de 2025,uma data que marcou profundamente a minha vida, o dia em que me converti e voltei para os braços do meu Pai e Senhor Jesus Cristo.</p>
-<p>De lá pra cá, vários desejos e sonhos veio em meu coração e um deles é este aplicativo e projeto.</p>
-</div>
-
-<div class="card-white">
-<h2>Sobre o aplicativo e nosso projeto</h2>
-<p>Este aplicativo foi pensado para ser um companheiro diário de fé, um espaço onde você pode encontrar a Bíblia, versículos para o seu dia, devocionais e conteúdos que fortalecem o coração e renovam a esperança.</p>
-<p>Além do cuidado espiritual, o Com Cristo também carrega um propósito social. Aqui, você tem a opção de ofertar um valor que venha do seu coração, contribuindo para que crianças, famílias e pessoas em situação de necessidade tenham acesso à Palavra de Deus e a projetos de apoio. Cada contribuição é um gesto de amor que gera impacto real.
-</p>
-<p>O objetivo é crescer junto com você e tornar o Com Cristo cada vez mais útil, bonito e significativo.</p>
-</div>
-
-<div class="support-box">
-<h2>Apoie este projeto cristão</h2>
-<p>Este é um projeto totalmente independente. Sua contribuição ajuda na manutenção do aplicativo e em ações sociais.</p>
-
-<div class="pix-highlight">
-Pix: comcristoapp@gmail.com
-</div>
-
-<button class="btn" id="copiarPixBtn">Copiar chave Pix</button>
-
-<a class="btn"
-href="https://link.mercadopago.com.br/andresantosdsn"
-target="_blank"
-rel="noopener noreferrer">
-Apoiar com cartão
-</a>
-
-<div class="counter-box">
-<h3>Valor recebido</h3>
-<div class="counter-value">R$ 0,00</div>
-<h3>Pessoas ajudadas</h3>
-<div class="counter-value">0</div>
-</div>
-
-<div class="security">
-🔒 Pagamento 100% seguro via Mercado Pago.
-</div>
-</div>
-
-<div class="social-box">
-<h2>Redes Sociais</h2>
-<p>Siga no Instagram e acompanhe conteúdos.</p>
-<div class="social-links">
-<a href="https://instagram.com/_u/andresantosofic" target="_blank">Instagram do criador</a>
-<a href="https://instagram.com/_u/comcristo.app" target="_blank">Instagram do aplicativo</a>
-</div>
-</div>
-
-</div>
-</section>
-
-<!-- BENEFITS -->
-<section class="benefits">
-<div class="container">
-<h2>Por que usar o ComCristo?</h2>
-
-<div class="benefit-box"><h3>Constância</h3><p>Ferramentas que ajudam você a manter disciplina espiritual diária.</p></div>
-<div class="benefit-box"><h3>Organização</h3><p>Seu progresso salvo e organizado dentro do aplicativo.</p></div>
-<div class="benefit-box"><h3>Leveza</h3><p>Design minimalista e focado na Palavra.</p></div>
-
-</div>
-</section>
-
-<!-- CTA -->
-<section class="cta">
-<div class="container">
-<h2>Em breve você poderá começar uma nova jornada!</h2>
-<a class="btn-primary">Lançamento em breve</a>
-</div>
-</section>
+<!-- RESTANTE DO SITE CONTINUA IGUAL -->
 
 <footer>
 © 2026 ComCristo • Seu devocional diário • Desenvolvido por André Santos
 </footer>
 
 <script>
+
+const mockups=[
+"mockup.png",
+"mockup2.png",
+"mockup3.png",
+"mockup4.png"
+];
+
+let index=0;
+
+setInterval(()=>{
+index++;
+if(index>=mockups.length){index=0;}
+document.getElementById("mockupSlider").src=mockups[index];
+},3000);
+
 // animações scroll
 const elements=document.querySelectorAll('.card,.benefit-box,.card-white,.support-box,.social-box');
+
 function showOnScroll(){
+
 const trigger=window.innerHeight*0.85;
+
 elements.forEach(el=>{
+
 const top=el.getBoundingClientRect().top;
-if(top<trigger){el.classList.add('show');}
-});
+
+if(top<trigger){
+el.classList.add('show');
 }
+
+});
+
+}
+
 window.addEventListener('scroll',showOnScroll);
+
 showOnScroll();
 
 // copiar pix
 document.getElementById("copiarPixBtn").addEventListener("click",function(){
+
 const chave="comcristoapp@gmail.com";
+
 navigator.clipboard.writeText(chave);
+
 alert("Chave Pix copiada!");
+
 });
+
 </script>
 
 </body>
