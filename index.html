@@ -266,7 +266,7 @@ to{opacity:1;transform:translateY(0);}
 
 <div class="mockup">
 <div class="floating-card card-top-left">Devocional Completo</div>
-<img src="mockup.png" alt="App ComCristo">
+<img id="mockupSlider" src="mockup.png" alt="App ComCristo">
 <div class="floating-card card-bottom-right">Poderosa Palavra de Deus</div>
 </div>
 </div>
@@ -390,6 +390,29 @@ const chave="comcristoapp@gmail.com";
 navigator.clipboard.writeText(chave);
 alert("Chave Pix copiada!");
 });
+
+// SLIDER DO MOCKUP DO APP
+const mockups = [
+"mockup.png",
+"mockup2.png",
+"mockup3.png",
+"mockup4.png"
+];
+
+let mockupIndex = 0;
+
+setInterval(() => {
+
+mockupIndex++;
+
+if(mockupIndex >= mockups.length){
+mockupIndex = 0;
+}
+
+document.getElementById("mockupSlider").src = mockups[mockupIndex];
+
+},3000);
+
 </script>
 
 </body>
