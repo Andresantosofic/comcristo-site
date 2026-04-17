@@ -161,12 +161,26 @@ Compartilhar
 
 <script>
 
-// CONCLUIR DEVOCIONAL
+// chave única por dia
+const hoje = new Date().toISOString().split("T")[0];
+const chave = "devocional_" + hoje;
+
 const btnConcluir = document.getElementById("btnConcluir");
 
-btnConcluir.addEventListener("click", () => {
+// 🔹 VERIFICA SE JÁ FOI CONCLUÍDO
+if(localStorage.getItem(chave)){
 btnConcluir.innerText = "✔ Devocional concluído";
 btnConcluir.classList.add("concluido");
+}
+
+// 🔹 AO CLICAR
+btnConcluir.addEventListener("click", () => {
+
+localStorage.setItem(chave, "true");
+
+btnConcluir.innerText = "✔ Devocional concluído";
+btnConcluir.classList.add("concluido");
+
 });
 
 
