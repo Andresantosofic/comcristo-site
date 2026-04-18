@@ -187,11 +187,21 @@ btnConcluir.classList.add("concluido");
 // COMPARTILHAR
 document.getElementById("btnCompartilhar").addEventListener("click", () => {
 
-const texto = "A Oração que Rompe Limites - 1 Crônicas 4:10\n\nLeia no ComCristo:\nhttps://andresantosofic.github.io/comc/devocional.html";
+const titulo = "A Oração que Rompe Limites";
+const referencia = "1 Crônicas 4:10";
+const link = "https://andresantosofic.github.io/comc/devocional.html";
+
+const texto = 
+`Devocional do dia
+
+${titulo} - ${referencia}
+
+Leia no ComCristo:
+${link}`;
 
 if(navigator.share){
 navigator.share({
-title: "Devocional ComCristo",
+title: "Devocional do dia",
 text: texto
 });
 }else{
