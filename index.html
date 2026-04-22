@@ -283,67 +283,6 @@ transform:translateX(-50%);
 @media(max-width:768px){
 .hero h1{font-size:26px;}
 }
-/* DEVOCIONAL TOPO */
-.devocional-topo{
-padding:30px 20px;
-background:#f5f7fa;
-}
-
-.card-devocional{
-background:linear-gradient(135deg,#0f2f63,#1e5db8);
-color:white;
-padding:25px;
-border-radius:28px;
-box-shadow:0 20px 40px rgba(0,0,0,0.15);
-max-width:500px;
-margin:auto;
-text-align:left;
-}
-
-.card-devocional .data{
-font-size:14px;
-opacity:0.9;
-display:block;
-margin-bottom:8px;
-}
-
-.card-devocional h2{
-font-size:22px;
-margin-bottom:15px;
-}
-
-.titulo-devocional{
-background:white;
-color:#1e5db8;
-padding:14px;
-border-radius:18px;
-font-weight:800;
-font-size:16px;
-text-align:center;
-margin-bottom:15px;
-}
-
-.referencia{
-font-size:14px;
-opacity:0.9;
-margin-bottom:18px;
-}
-
-.btn-devocional{
-display:inline-block;
-background:white;
-color:#1e5db8;
-padding:12px 24px;
-border-radius:40px;
-font-weight:700;
-text-decoration:none;
-transition:0.3s;
-}
-
-.btn-devocional:hover{
-transform:translateY(-2px);
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
-}
 </style>
 </head>
 
@@ -353,40 +292,13 @@ box-shadow:0 10px 25px rgba(0,0,0,0.2);
 <img src="logo.png" alt="ComCristo Logo">
 </div>
 
-<!-- 🔥 DEVOCIONAL DO DIA -->
-<section class="devocional-topo">
-  <div class="container">
-
-    <div class="card-devocional">
-
-      <span class="data">22 de abril de 2026</span>
-
-      <h2>Devocional de hoje</h2>
-
-      <div id="tituloDevocional" class="titulo-devocional">
-  Carregando...
-</div>
-
-<p id="referenciaDevocional" class="referencia">
-  ...
-</p>
-
-      <a href="devocional.html" class="btn-devocional">
-        Ler Devocional
-      </a>
-
-    </div>
-
-  </div>
-</section>
-
 <!-- HERO -->
 <section class="hero">
 <div class="container">
 <h1>Viva a Palavra de Deus todos os dias</h1>
 <p>O ComCristo foi criado para ajudar você a criar constância espiritual com leveza, profundidade e propósito.</p>
 <a class="btn-primary">Lançamento em breve</a>
-<small>Lançamento do aplicativo será apenas para Android</small>
+<small>Disponível apenas para Android no momento</small>
 
 <div class="mockup">
 <div class="floating-card card-top-left">Devocional Completo</div>
@@ -431,22 +343,24 @@ box-shadow:0 10px 25px rgba(0,0,0,0.2);
 
 <div class="card">
 <h2>Sobre mim</h2>
-<p>Sou André Santos, cristão, criador de conteúdo e designer.</p>
-Depois de viver distante de Cristo, tive minha vida transformada em 31 de julho de 2025 — o dia em que voltei para os braços de Deus.</p>
-<p>Hoje, este aplicativo é fruto desse novo propósito que nasceu no meu coração.</p>
+<p>Meu nome é André Santos, sou cristão, criador de conteúdo e designer.</p>
+<p>Cresci na religião católica, mas vivi uma vida distante de Cristo e seus
+ensinamentos.</p>
+<p>Minha caminhada com Cristo começou realmente em 31 de julho de 2025,uma data que marcou profundamente a minha vida, o dia em que me converti e voltei para os braços do meu Pai e Senhor Jesus Cristo.</p>
+<p>De lá pra cá, vários desejos e sonhos veio em meu coração e um deles é este aplicativo e projeto.</p>
 </div>
 
 <div class="card">
 <h2>Sobre o aplicativo e nosso projeto</h2>
-<p>O ComCristo foi criado para fortalecer sua fé todos os dias com a Palavra de Deus.</p>
-<p>Mais do que um aplicativo, é um projeto com propósito: levar esperança a quem precisa através de cada contribuição.</p>
-<p>Estamos construindo algo que cresce junto com você.</p>
+<p>Este aplicativo foi pensado para ser um companheiro diário de fé, um espaço onde você pode encontrar a Bíblia, versículos para o seu dia, devocionais e conteúdos que fortalecem o coração e renovam a esperança.</p>
+<p>Além do cuidado espiritual, o Com Cristo também carrega um propósito social. Aqui, você tem a opção de ofertar um valor que venha do seu coração, contribuindo para que crianças, famílias e pessoas em situação de necessidade tenham acesso à Palavra de Deus e a projetos de apoio. Cada contribuição é um gesto de amor que gera impacto real.
+</p>
+<p>O objetivo é crescer junto com você e tornar o Com Cristo cada vez mais útil, bonito e significativo.</p>
 </div>
 
 <div class="support-box">
 <h2>Apoie este projeto cristão</h2>
-<p>Este projeto já está impactando vidas.
-Cada contribuição ajuda a levar a Palavra de Deus a pessoas que precisam, além de manter o aplicativo funcionando e crescendo.</p>
+<p>Este é um projeto totalmente independente. Sua contribuição ajuda na manutenção do aplicativo e em ações sociais.</p>
 
 <div class="pix-highlight">
 Pix: comcristoapp@gmail.com
@@ -551,76 +465,7 @@ document.getElementById("mockupSlider").src = mockups[mockupIndex];
 
 },3000);
 
-<script>
-
-// animações scroll
-const elements=document.querySelectorAll('.card,.benefit-box,.card-white,.support-box,.social-box');
-function showOnScroll(){
-const trigger=window.innerHeight*0.85;
-elements.forEach(el=>{
-const top=el.getBoundingClientRect().top;
-if(top<trigger){el.classList.add('show');}
-});
-}
-window.addEventListener('scroll',showOnScroll);
-showOnScroll();
-
-// copiar pix
-document.getElementById("copiarPixBtn").addEventListener("click",function(){
-const chave="comcristoapp@gmail.com";
-navigator.clipboard.writeText(chave);
-alert("Chave Pix copiada!");
-});
-
-// slider mockup
-const mockups = [
-"mockup.png",
-"mockup2.png",
-"mockup3.png",
-"mockup4.png"
-];
-
-let mockupIndex = 0;
-
-setInterval(() => {
-mockupIndex++;
-if(mockupIndex >= mockups.length){
-mockupIndex = 0;
-}
-document.getElementById("mockupSlider").src = mockups[mockupIndex];
-},3000);
-
-
-// 🔥 DEVOCIONAL AUTOMÁTICO
-async function carregarDevocional() {
-
-  try {
-
-    const resposta = await fetch("./devocionais.json");
-    const dados = await resposta.json();
-
-    const hoje = new Date().toISOString().split("T")[0];
-
-    let dataHoje = dados[hoje];
-
-    // fallback (se não tiver hoje)
-    if (!dataHoje) {
-      const datas = Object.keys(dados).sort();
-      dataHoje = dados[datas[datas.length - 1]];
-    }
-
-    const dev = dataHoje.devocional;
-
-    document.getElementById("tituloDevocional").innerText = dev.tema;
-    document.getElementById("referenciaDevocional").innerText =
-      `"${dev.versiculo}" (${dev.referencia})`;
-
-  } catch (e) {
-    console.log("Erro ao carregar JSON:", e);
-  }
-
-}
-
-carregarDevocional();
-
 </script>
+
+</body>
+</html>
