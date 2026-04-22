@@ -559,7 +559,7 @@ async function carregarDevocional(){
 
 try{
 
-const resposta = await fetch("devocionais.json");
+const resposta = await fetch("https://andresantosofic.github.io/comcristo-site/devocionais.json");
 
 if(!resposta.ok){
 throw new Error("JSON não encontrado");
@@ -567,21 +567,21 @@ throw new Error("JSON não encontrado");
 
 const dados = await resposta.json();
 
-// data de hoje
-const hoje = new Date().toLocaleDateString("en-CA");
-
+// 🔥 CAMINHO CORRETO DO JSON
 const devocionais = dados.data.devocionais;
+
+// 🔥 DATA NO FORMATO CERTO
+const hoje = new Date().toISOString().split("T")[0];
 
 let dataEscolhida = devocionais[hoje];
 
-// 🔥 SE NÃO EXISTIR HOJE → PEGA A MAIS RECENTE
+// 🔥 FALLBACK (se não tiver hoje)
 if(!dataEscolhida){
 
 const datas = Object.keys(devocionais).sort();
 const ultimaData = datas[datas.length - 1];
-dataEscolhida = devocionais[ultimaData];
 
-dataEscolhida = dados[ultimaData];
+dataEscolhida = devocionais[ultimaData];
 
 console.log("Usando última data disponível:", ultimaData);
 }
@@ -591,11 +591,10 @@ throw new Error("Devocional não encontrado");
 }
 
 const dev = dataEscolhida.devocional;
-// preenche na tela
-document.getElementById("tituloDevocional").innerText = dev.tema;
 
-document.getElementById("referenciaDevocional").innerText =
-dev.referencia;
+// 🔥 ATUALIZA TELA
+document.getElementById("tituloDevocional").innerText = dev.tema;
+document.getElementById("referenciaDevocional").innerText = dev.referencia;
 
 }catch(e){
 
