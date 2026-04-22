@@ -550,35 +550,6 @@ document.getElementById("mockupSlider").src = mockups[mockupIndex];
 },3000);
 
 <script>
-async function carregarDevocionalHome() {
-
-  try {
-    const resposta = await fetch("./devocionais.json");
-    const dados = await resposta.json();
-
-    const hoje = new Date().toISOString().split("T")[0];
-
-    let hojeData = dados[hoje];
-
-    // 🔥 fallback automático
-    if (!hojeData) {
-      const datas = Object.keys(dados).sort();
-      hojeData = dados[datas[datas.length - 1]];
-    }
-
-    const devocional = hojeData.devocional;
-
-    document.querySelector(".titulo-devocional").innerText = devocional.tema;
-    document.querySelector(".referencia").innerText = devocional.referencia;
-
-  } catch (erro) {
-    console.log("Erro ao carregar home:", erro);
-  }
-
-}
-
-carregarDevocionalHome();
-</script>
 
 </body>
 </html>
