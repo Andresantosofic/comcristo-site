@@ -555,70 +555,59 @@ hoje.toLocaleDateString('pt-BR', opcoes);
 
 
 // 🔥 JSON
-async function carregarDevocional(){
+async function carregarDevocional() {
+  try {
 
-try{
+    const resposta = await fetch("https://andresantosofic.github.io/comcristo-site/devocionais.json");
 
-const resposta = await fetch("https://andresantosofic.github.io/comcristo-site/devocionais.json");
+    if (!resposta.ok) {
+      throw new Error("Erro ao buscar JSON");
+    }
 
-const dados = await resposta.json();
+    const dados = await resposta.json();
 
-// 🔥 MOSTRA NO CONSOLE
-console.log("JSON COMPLETO:", dados);
+    // 🔥 SUPORTA 2 FORMATOS (com ou sem "data.devocionais")
+    let devocionais = dados;
 
-// 🔥 TESTA CAMINHOS POSSÍVEIS
-console.log("dados direto:", dados["2026-04-22"]);
-console.log("dados.data:", dados.data);
-console.log("dados.data.devocionais:", dados.data?.devocionais);
+    if (dados.data && dados.data.devocionais) {
+      devocionais = dados.data.devocionais;
+    }
 
-const hoje = new Date().toISOString().split("T")[0];
+    // 🔥 DATA ATUAL (formato YYYY-MM-DD)
+    const hoje = new Date().toISOString().split("T")[0];
 
-console.log("Hoje:", hoje);
+    let dataEscolhida = devocionais[hoje];
 
-// 🔥 TESTE AUTOMÁTICO
-let devocionais = dados;
+    // 🔥 FALLBACK (pega a mais recente)
+    if (!dataEscolhida) {
+      const datas = Object.keys(devocionais).sort();
+      const ultimaData = datas[datas.length - 1];
+      dataEscolhida = devocionais[ultimaData];
+    }
 
-// se existir estrutura interna
-if(dados.data && dados.data.devocionais){
-devocionais = dados.data.devocionais;
-}
+    // 🔥 VALIDAÇÃO
+    if (!dataEscolhida || !dataEscolhida.devocional) {
+      throw new Error("Devocional não encontrado");
+    }
 
-// tenta pegar hoje
-let dataEscolhida = devocionais[hoje];
+    const dev = dataEscolhida.devocional;
 
-console.log("Data encontrada:", dataEscolhida);
+    // 🔥 ATUALIZA A TELA
+    document.getElementById("tituloDevocional").innerText = dev.tema;
 
-// fallback
-if(!dataEscolhida){
-const datas = Object.keys(devocionais).sort();
-const ultima = datas[datas.length - 1];
+    document.getElementById("referenciaDevocional").innerText =
+      dev.referencia || dev.versiculo || "";
 
-console.log("Fallback para:", ultima);
+  } catch (e) {
 
-dataEscolhida = devocionais[ultima];
-}
+    console.error("ERRO REAL:", e);
 
-if(!dataEscolhida){
-throw new Error("Nenhuma data encontrada");
-}
+    document.getElementById("tituloDevocional").innerText =
+      "Devocional indisponível";
 
-const dev = dataEscolhida.devocional;
-
-document.getElementById("tituloDevocional").innerText = dev.tema;
-document.getElementById("referenciaDevocional").innerText = dev.referencia;
-
-}catch(e){
-
-console.error("ERRO REAL:", e);
-
-document.getElementById("tituloDevocional").innerText =
-"Devocional indisponível";
-
-document.getElementById("referenciaDevocional").innerText =
-"Tente novamente mais tarde";
-
-}
-
+    document.getElementById("referenciaDevocional").innerText =
+      "Tente novamente mais tarde";
+  }
 }
 // 🔥 EXECUTA DEPOIS QUE A PÁGINA CARREGAR
 window.onload = () => {
