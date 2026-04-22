@@ -208,6 +208,44 @@ window.open(`https://wa.me/?text=${encodeURIComponent(texto)}`, '_blank');
 
 });
 
+<script>
+async function carregarDevocional() {
+
+  try {
+    const resposta = await fetch("./devocionais.json");
+    const dados = await resposta.json();
+
+    const hoje = new Date().toISOString().split("T")[0];
+
+    let hojeData = dados[hoje];
+
+    // 🔥 fallback (se não tiver hoje)
+    if (!hojeData) {
+      const datas = Object.keys(dados).sort();
+      hojeData = dados[datas[datas.length - 1]];
+    }
+
+    const devocional = hojeData.devocional;
+
+    // 🔥 TEMA
+    document.querySelector(".titulo").innerText = devocional.tema;
+
+    const textos = document.querySelectorAll(".texto");
+
+    textos[0].innerText = devocional.versiculo;
+    textos[1].innerText = devocional.referencia;
+    textos[2].innerText = devocional.estudo;
+    textos[3].innerText = devocional.reflexao;
+    textos[4].innerText = devocional.aplicacao;
+    textos[5].innerText = devocional.oracao;
+
+  } catch (erro) {
+    console.log("Erro ao carregar devocional:", erro);
+  }
+
+}
+
+carregarDevocional();
 </script>
 
 </body>
