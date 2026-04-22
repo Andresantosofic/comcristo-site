@@ -347,7 +347,74 @@ box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 </style>
 </head>
+<script>
 
+// 🔥 DATA AUTOMÁTICA
+function formatarData(){
+
+const hoje = new Date();
+
+const opcoes = {
+day: 'numeric',
+month: 'long',
+year: 'numeric'
+};
+
+document.getElementById("dataHoje").innerText =
+hoje.toLocaleDateString('pt-BR', opcoes);
+
+}
+
+formatarData();
+
+
+// 🔥 DEVOCIONAL VIA JSON
+async function carregarDevocional(){
+
+try{
+
+const resposta = await fetch("devocionais.json");
+
+if(!resposta.ok){
+throw new Error("JSON não encontrado");
+}
+
+const dados = await resposta.json();
+
+const hoje = new Date().toISOString().split("T")[0];
+
+let dataHoje = dados[hoje];
+
+// fallback automático (se não tiver hoje)
+if(!dataHoje){
+const datas = Object.keys(dados).sort();
+dataHoje = dados[datas[datas.length - 1]];
+}
+
+const dev = dataHoje.devocional;
+
+document.getElementById("tituloDevocional").innerText = dev.tema;
+
+document.getElementById("referenciaDevocional").innerText =
+`${dev.referencia}`;
+
+}catch(e){
+
+console.log("Erro ao carregar JSON:", e);
+
+document.getElementById("tituloDevocional").innerText =
+"Devocional indisponível";
+
+document.getElementById("referenciaDevocional").innerText =
+"Verifique o arquivo JSON";
+
+}
+
+}
+
+carregarDevocional();
+
+</script>
 <body>
 
 <div class="topbar">
@@ -360,16 +427,16 @@ box-shadow:0 10px 25px rgba(0,0,0,0.2);
 
     <div class="card-devocional">
 
-      <span class="data">22 de abril de 2026</span>
+      <span id="dataHoje" class="data">Carregando...</span>
 
       <h2>Devocional de hoje</h2>
 
-      <div class="titulo-devocional">
-        A ORAÇÃO QUE ROMPE LIMITES
+      <div id="tituloDevocional" class="titulo-devocional">
+        Carregando...
       </div>
 
-      <p class="referencia">
-        1 Crônicas 4:10
+      <p id="referenciaDevocional" class="referencia">
+        ...
       </p>
 
       <a href="devocional.html" class="btn-devocional">
