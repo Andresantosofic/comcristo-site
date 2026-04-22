@@ -559,7 +559,7 @@ async function carregarDevocional(){
 
 try{
 
-const resposta = await fetch("/comc/devocionais.json");
+const resposta = await fetch("devocionais.json");
 
 if(!resposta.ok){
 throw new Error("JSON não encontrado");
