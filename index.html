@@ -567,15 +567,15 @@ throw new Error("JSON não encontrado");
 
 const dados = await resposta.json();
 
-// 🔥 CAMINHO CORRETO DO JSON
+// ✅ JSON DIRETO
 const devocionais = dados;
 
-// 🔥 DATA NO FORMATO CERTO
+// ✅ DATA
 const hoje = new Date().toISOString().split("T")[0];
 
 let dataEscolhida = devocionais[hoje];
 
-// 🔥 FALLBACK (se não tiver hoje)
+// ✅ FALLBACK
 if(!dataEscolhida){
 
 const datas = Object.keys(devocionais).sort();
@@ -583,22 +583,25 @@ const ultimaData = datas[datas.length - 1];
 
 dataEscolhida = devocionais[ultimaData];
 
-console.log("Usando última data disponível:", ultimaData);
+console.log("Usando:", ultimaData);
 }
 
+// ✅ SEGURANÇA
 if(!dataEscolhida || !dataEscolhida.devocional){
 throw new Error("Devocional não encontrado");
 }
 
 const dev = dataEscolhida.devocional;
 
-// 🔥 ATUALIZA TELA
+// ✅ UI
 document.getElementById("tituloDevocional").innerText = dev.tema;
-document.getElementById("referenciaDevocional").innerText = dev.referencia;
+
+document.getElementById("referenciaDevocional").innerText =
+dev.referencia;
 
 }catch(e){
 
-console.log("Erro ao carregar JSON:", e);
+console.log("Erro real:", e);
 
 document.getElementById("tituloDevocional").innerText =
 "Devocional indisponível";
