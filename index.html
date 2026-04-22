@@ -347,74 +347,6 @@ box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 </style>
 </head>
-<script>
-
-// 🔥 DATA AUTOMÁTICA
-function formatarData(){
-
-const hoje = new Date();
-
-const opcoes = {
-day: 'numeric',
-month: 'long',
-year: 'numeric'
-};
-
-document.getElementById("dataHoje").innerText =
-hoje.toLocaleDateString('pt-BR', opcoes);
-
-}
-
-formatarData();
-
-
-// 🔥 DEVOCIONAL VIA JSON
-async function carregarDevocional(){
-
-try{
-
-const resposta = await fetch("/comc/devocionais.json");
-
-if(!resposta.ok){
-throw new Error("JSON não encontrado");
-}
-
-const dados = await resposta.json();
-
-const hoje = new Date().toISOString().split("T")[0];
-
-let dataHoje = dados[hoje];
-
-// fallback automático (se não tiver hoje)
-if(!dataHoje){
-const datas = Object.keys(dados).sort();
-dataHoje = dados[datas[datas.length - 1]];
-}
-
-const dev = dataHoje.devocional;
-
-document.getElementById("tituloDevocional").innerText = dev.tema;
-
-document.getElementById("referenciaDevocional").innerText =
-`${dev.referencia}`;
-
-}catch(e){
-
-console.log("Erro ao carregar JSON:", e);
-
-document.getElementById("tituloDevocional").innerText =
-"Devocional indisponível";
-
-document.getElementById("referenciaDevocional").innerText =
-"Verifique o arquivo JSON";
-
-}
-
-}
-
-carregarDevocional();
-
-</script>
 <body>
 
 <div class="topbar">
@@ -580,6 +512,7 @@ Apoiar com cartão
 </footer>
 
 <script>
+
 // animações scroll
 const elements=document.querySelectorAll('.card,.benefit-box,.card-white,.support-box,.social-box');
 function showOnScroll(){
@@ -599,29 +532,64 @@ navigator.clipboard.writeText(chave);
 alert("Chave Pix copiada!");
 });
 
-// SLIDER DO MOCKUP DO APP
-const mockups = [
-"mockup.png",
-"mockup2.png",
-"mockup3.png",
-"mockup4.png"
-];
-
+// slider
+const mockups = ["mockup.png","mockup2.png","mockup3.png","mockup4.png"];
 let mockupIndex = 0;
 
 setInterval(() => {
-
 mockupIndex++;
-
 if(mockupIndex >= mockups.length){
 mockupIndex = 0;
 }
-
 document.getElementById("mockupSlider").src = mockups[mockupIndex];
-
 },3000);
 
-</script>
 
+// 🔥 DATA
+function formatarData(){
+const hoje = new Date();
+const opcoes = { day:'numeric', month:'long', year:'numeric' };
+document.getElementById("dataHoje").innerText =
+hoje.toLocaleDateString('pt-BR', opcoes);
+}
+
+
+// 🔥 JSON
+async function carregarDevocional(){
+try{
+const resposta = await fetch("/comc/devocionais.json");
+
+if(!resposta.ok){
+throw new Error("JSON não encontrado");
+}
+
+const dados = await resposta.json();
+
+const hoje = new Date().toISOString().split("T")[0];
+
+let dataHoje = dados[hoje];
+
+if(!dataHoje){
+const datas = Object.keys(dados).sort();
+dataHoje = dados[datas[datas.length - 1]];
+}
+
+const dev = dataHoje.devocional;
+
+document.getElementById("tituloDevocional").innerText = dev.tema;
+document.getElementById("referenciaDevocional").innerText = dev.referencia;
+
+}catch(e){
+console.log("Erro:", e);
+}
+}
+
+// 🔥 EXECUTA DEPOIS QUE A PÁGINA CARREGAR
+window.onload = () => {
+formatarData();
+carregarDevocional();
+};
+
+</script>
 </body>
 </html>
