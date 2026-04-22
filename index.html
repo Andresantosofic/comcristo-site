@@ -561,47 +561,55 @@ try{
 
 const resposta = await fetch("https://andresantosofic.github.io/comcristo-site/devocionais.json");
 
-if(!resposta.ok){
-throw new Error("JSON não encontrado");
-}
-
 const dados = await resposta.json();
 
-// ✅ JSON DIRETO
-const devocionais = dados;
+// 🔥 MOSTRA NO CONSOLE
+console.log("JSON COMPLETO:", dados);
 
-// ✅ DATA
+// 🔥 TESTA CAMINHOS POSSÍVEIS
+console.log("dados direto:", dados["2026-04-22"]);
+console.log("dados.data:", dados.data);
+console.log("dados.data.devocionais:", dados.data?.devocionais);
+
 const hoje = new Date().toISOString().split("T")[0];
 
-let dataEscolhida = devocionais[hoje];
+console.log("Hoje:", hoje);
 
-// ✅ FALLBACK
-if(!dataEscolhida){
+// 🔥 TESTE AUTOMÁTICO
+let devocionais = dados;
 
-const datas = Object.keys(devocionais).sort();
-const ultimaData = datas[datas.length - 1];
-
-dataEscolhida = devocionais[ultimaData];
-
-console.log("Usando:", ultimaData);
+// se existir estrutura interna
+if(dados.data && dados.data.devocionais){
+devocionais = dados.data.devocionais;
 }
 
-// ✅ SEGURANÇA
-if(!dataEscolhida || !dataEscolhida.devocional){
-throw new Error("Devocional não encontrado");
+// tenta pegar hoje
+let dataEscolhida = devocionais[hoje];
+
+console.log("Data encontrada:", dataEscolhida);
+
+// fallback
+if(!dataEscolhida){
+const datas = Object.keys(devocionais).sort();
+const ultima = datas[datas.length - 1];
+
+console.log("Fallback para:", ultima);
+
+dataEscolhida = devocionais[ultima];
+}
+
+if(!dataEscolhida){
+throw new Error("Nenhuma data encontrada");
 }
 
 const dev = dataEscolhida.devocional;
 
-// ✅ UI
 document.getElementById("tituloDevocional").innerText = dev.tema;
-
-document.getElementById("referenciaDevocional").innerText =
-dev.referencia;
+document.getElementById("referenciaDevocional").innerText = dev.referencia;
 
 }catch(e){
 
-console.log("Erro real:", e);
+console.error("ERRO REAL:", e);
 
 document.getElementById("tituloDevocional").innerText =
 "Devocional indisponível";
