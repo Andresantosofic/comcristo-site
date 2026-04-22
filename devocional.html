@@ -17,13 +17,11 @@ background:#e9eef3;
 padding:20px;
 }
 
-/* CONTAINER */
 .container{
 max-width:600px;
 margin:auto;
 }
 
-/* CARDS */
 .card{
 background:white;
 border-radius:25px;
@@ -37,7 +35,6 @@ background:#2a466b;
 color:white;
 }
 
-/* TITULOS */
 .titulo-pequeno{
 font-size:12px;
 opacity:0.7;
@@ -57,7 +54,6 @@ font-size:15px;
 line-height:1.6;
 }
 
-/* BOTÕES */
 .botoes{
 margin-top:25px;
 display:flex;
@@ -86,7 +82,6 @@ border:2px solid #2bb3b1;
 color:#2bb3b1;
 }
 
-/* CONCLUIDO */
 .concluido{
 background:#4CAF50 !important;
 color:white;
@@ -161,19 +156,19 @@ Compartilhar
 
 <script>
 
-// chave única por dia
+// DATA DO DIA (SALVAR PROGRESSO)
 const hoje = new Date().toISOString().split("T")[0];
 const chave = "devocional_" + hoje;
 
 const btnConcluir = document.getElementById("btnConcluir");
 
-// 🔹 VERIFICA SE JÁ FOI CONCLUÍDO
+// VERIFICA SE JÁ FOI CONCLUÍDO
 if(localStorage.getItem(chave)){
 btnConcluir.innerText = "✔ Devocional concluído";
 btnConcluir.classList.add("concluido");
 }
 
-// 🔹 AO CLICAR
+// AO CLICAR
 btnConcluir.addEventListener("click", () => {
 
 localStorage.setItem(chave, "true");
@@ -183,17 +178,16 @@ btnConcluir.classList.add("concluido");
 
 });
 
-
 // COMPARTILHAR
 document.getElementById("btnCompartilhar").addEventListener("click", () => {
 
-  const link = "https://andresantosofic.github.io/comc/devocional.html";
+const link = "https://andresantosofic.github.io/comc/devocional.html";
 
-  // 🔥 PEGANDO DO HTML
-  const titulo = document.querySelector(".titulo").innerText;
-  const referencia = document.querySelectorAll(".texto")[1].innerText;
+// 🔥 PEGANDO DO HTML
+const titulo = document.querySelector(".titulo").innerText;
+const referencia = document.querySelectorAll(".texto")[1].innerText;
 
-  const texto = 
+const texto = 
 `📖 Devocional do dia
 
 ${titulo} — ${referencia}
@@ -203,15 +197,18 @@ ${titulo} — ${referencia}
 👉 Leia completo:
 ${link}`;
 
-  if(navigator.share){
-    navigator.share({
-      title: "Devocional do dia",
-      text: texto
-    });
-  } else {
-    window.open(`https://wa.me/?text=${encodeURIComponent(texto)}`, '_blank');
-  }
+if(navigator.share){
+navigator.share({
+title: "Devocional do dia",
+text: texto
+});
+}else{
+window.open(`https://wa.me/?text=${encodeURIComponent(texto)}`, '_blank');
+}
 
 });
+
+</script>
+
 </body>
 </html>
