@@ -556,7 +556,9 @@ hoje.toLocaleDateString('pt-BR', opcoes);
 
 // 🔥 JSON
 async function carregarDevocional(){
+
 try{
+
 const resposta = await fetch("/comc/devocionais.json");
 
 if(!resposta.ok){
@@ -565,25 +567,45 @@ throw new Error("JSON não encontrado");
 
 const dados = await resposta.json();
 
+// data de hoje
 const hoje = new Date().toISOString().split("T")[0];
 
-let dataHoje = dados[hoje];
+let dataEscolhida = dados[hoje];
 
-if(!dataHoje){
-const datas = Object.keys(dados).sort();
-dataHoje = dados[datas[datas.length - 1]];
+// 🔥 SE NÃO EXISTIR HOJE → PEGA A MAIS RECENTE
+if(!dataEscolhida){
+
+const datas = Object.keys(dados).sort(); // ordena as datas
+
+// pega a última data disponível
+const ultimaData = datas[datas.length - 1];
+
+dataEscolhida = dados[ultimaData];
+
+console.log("Usando última data disponível:", ultimaData);
 }
 
-const dev = dataHoje.devocional;
+const dev = dataEscolhida.devocional;
 
+// preenche na tela
 document.getElementById("tituloDevocional").innerText = dev.tema;
-document.getElementById("referenciaDevocional").innerText = dev.referencia;
+
+document.getElementById("referenciaDevocional").innerText =
+dev.referencia;
 
 }catch(e){
-console.log("Erro:", e);
-}
+
+console.log("Erro ao carregar JSON:", e);
+
+document.getElementById("tituloDevocional").innerText =
+"Devocional indisponível";
+
+document.getElementById("referenciaDevocional").innerText =
+"Tente novamente mais tarde";
+
 }
 
+}
 // 🔥 EXECUTA DEPOIS QUE A PÁGINA CARREGAR
 window.onload = () => {
 formatarData();
