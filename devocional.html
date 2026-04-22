@@ -96,47 +96,35 @@ color:white;
 <!-- 1° CARD -->
 <div class="card">
 <div class="titulo-pequeno">Tema do devocional</div>
-<div class="titulo">Amor Sem Pré-condições</div>
+<div id="tema" class="titulo">Carregando...</div>
 
-<p class="texto">
-"Mas Deus prova o seu amor para conosco, em que Cristo morreu por nós, sendo nós ainda pecadores."
-</p>
+<p id="versiculo" class="texto"></p>
 
-<p class="texto" style="margin-top:10px;opacity:0.7;">
-Romanos 5:8
-</p>
+<p id="referencia" class="texto" style="margin-top:10px;opacity:0.7;"></p>
 </div>
 
 <!-- 2° CARD -->
 <div class="card card-dark">
 <div class="titulo">📖 Estudo</div>
-<p class="texto">
-O amor humano geralmente é condicional: amamos quem nos agrada ou quem merece. O amor de Deus (agape) é demonstrado na cruz enquanto éramos 'ainda pecadores'. Deus não esperou que nós melhorássemos para nos amar; Ele nos amou no nosso pior estado para nos transformar no Seu melhor. A prova do amor de Deus não é um sentimento quente no coração, é um fato histórico: a morte de Cristo. Esse amor é a base da nossa segurança; se Ele nos amou quando éramos inimigos, quanto mais nos amará agora que somos filhos!
-</p>
+<p id="estudo" class="texto"></p>
 </div>
 
 <!-- 3° CARD -->
 <div class="card card-dark">
 <div class="titulo">🤔 Reflexão</div>
-<p class="texto">
-Você sente que precisa ser 'bom o suficiente' para que Deus te ame hoje? Como a verdade de que Cristo morreu por você enquanto você ainda era um pecador muda sua confiança em Deus? Você não pode fazer nada para Deus te amar mais, e nada para Ele te amar menos.
-</p>
+<p id="reflexao" class="texto"></p>
 </div>
 
 <!-- 4° CARD -->
 <div class="card card-dark">
 <div class="titulo">🛠 Aplicação Prática</div>
-<p class="texto">
-Descanse na aceitação de Deus hoje. Não deixe que suas falhas de hoje te afastem do Pai. Volte para Ele rapidamente, sabendo que o amor dEle já foi provado e selado na cruz. Ame os outros hoje com essa mesma graça imerecida.
-</p>
+<p id="aplicacao" class="texto"></p>
 </div>
 
 <!-- 5° CARD -->
 <div class="card card-dark">
 <div class="titulo">🙏 Oração</div>
-<p class="texto">
-Deus, obrigado pela prova definitiva do Teu amor. Obrigado porque Cristo morreu por mim quando eu nada tinha a oferecer. Eu recebo esse amor e decido viver em resposta a essa graça maravilhosa. Amém.
-</p>
+<p id="oracao" class="texto"></p>
 </div>
 
 <!-- BOTÕES -->
@@ -156,36 +144,71 @@ Compartilhar
 
 <script>
 
-// DATA DO DIA (SALVAR PROGRESSO)
+// 🔥 CARREGAR DEVOCIONAL
+async function carregarDevocional(){
+
+try{
+
+const resposta = await fetch("https://andresantosofic.github.io/comcristo-site/devocionais.json");
+const dados = await resposta.json();
+
+let devocionais = dados;
+
+if(dados.data && dados.data.devocionais){
+devocionais = dados.data.devocionais;
+}
+
+const hoje = new Date().toISOString().split("T")[0];
+
+let dataEscolhida = devocionais[hoje];
+
+if(!dataEscolhida){
+const datas = Object.keys(devocionais).sort();
+const ultima = datas[datas.length - 1];
+dataEscolhida = devocionais[ultima];
+}
+
+const dev = dataEscolhida.devocional;
+
+// 🔥 PREENCHER HTML
+document.getElementById("tema").innerText = dev.tema;
+document.getElementById("versiculo").innerText = `"${dev.versiculo}"`;
+document.getElementById("referencia").innerText = dev.referencia;
+document.getElementById("estudo").innerText = dev.estudo;
+document.getElementById("reflexao").innerText = dev.reflexao;
+document.getElementById("aplicacao").innerText = dev.aplicacao;
+document.getElementById("oracao").innerText = dev.oracao;
+
+}catch(e){
+console.error("Erro ao carregar devocional:", e);
+}
+
+}
+
+// 🔥 CONCLUIR DEVOCIONAL
 const hoje = new Date().toISOString().split("T")[0];
 const chave = "devocional_" + hoje;
 
 const btnConcluir = document.getElementById("btnConcluir");
 
-// VERIFICA SE JÁ FOI CONCLUÍDO
 if(localStorage.getItem(chave)){
 btnConcluir.innerText = "✔ Devocional concluído";
 btnConcluir.classList.add("concluido");
 }
 
-// AO CLICAR
 btnConcluir.addEventListener("click", () => {
-
 localStorage.setItem(chave, "true");
-
 btnConcluir.innerText = "✔ Devocional concluído";
 btnConcluir.classList.add("concluido");
-
 });
 
-// COMPARTILHAR
+// 🔥 COMPARTILHAR
 document.getElementById("btnCompartilhar").addEventListener("click", () => {
 
-const link = "https://andresantosofic.github.io/comc/devocional.html";
+const link = window.location.href;
 
-// 🔥 PEGANDO DO HTML
-const titulo = document.querySelector(".titulo").innerText;
-const referencia = document.querySelectorAll(".texto")[1].innerText;
+const titulo = document.getElementById("tema").innerText;
+const referencia = document.getElementById("referencia").innerText;
 
 const texto = 
 `📖 Devocional do dia
@@ -207,6 +230,9 @@ window.open(`https://wa.me/?text=${encodeURIComponent(texto)}`, '_blank');
 }
 
 });
+
+// 🔥 INIT
+window.onload = carregarDevocional;
 
 </script>
 
