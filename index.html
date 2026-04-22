@@ -568,25 +568,29 @@ throw new Error("JSON não encontrado");
 const dados = await resposta.json();
 
 // data de hoje
-const hoje = new Date().toISOString().split("T")[0];
+const hoje = new Date().toLocaleDateString("en-CA");
 
-let dataEscolhida = dados[hoje];
+const devocionais = dados.data.devocionais;
+
+let dataEscolhida = devocionais[hoje];
 
 // 🔥 SE NÃO EXISTIR HOJE → PEGA A MAIS RECENTE
 if(!dataEscolhida){
 
-const datas = Object.keys(dados).sort(); // ordena as datas
-
-// pega a última data disponível
+const datas = Object.keys(devocionais).sort();
 const ultimaData = datas[datas.length - 1];
+dataEscolhida = devocionais[ultimaData];
 
 dataEscolhida = dados[ultimaData];
 
 console.log("Usando última data disponível:", ultimaData);
 }
 
-const dev = dataEscolhida.devocional;
+if(!dataEscolhida || !dataEscolhida.devocional){
+throw new Error("Devocional não encontrado");
+}
 
+const dev = dataEscolhida.devocional;
 // preenche na tela
 document.getElementById("tituloDevocional").innerText = dev.tema;
 
