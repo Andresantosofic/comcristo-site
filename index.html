@@ -362,6 +362,9 @@ box-shadow:0 10px 25px rgba(0,0,0,0.2);
       <span id="dataHoje" class="data">Carregando...</span>
 
       <h2>Devocional de hoje</h2>
+      <p id="contadorVirada" style="font-size:13px;opacity:0.8;margin-bottom:10px;">
+Atualiza em: --:--:--
+</p>
 
       <div id="tituloDevocional" class="titulo-devocional">
         Carregando...
@@ -610,6 +613,43 @@ document.getElementById("referenciaDevocional").innerText =
       "Tente novamente mais tarde";
   }
 }
+  function atualizarContador(){
+
+const agora = new Date();
+
+// próxima meia-noite
+const meiaNoite = new Date();
+meiaNoite.setHours(24,0,0,0);
+
+const diff = meiaNoite - agora;
+
+const horas = Math.floor(diff / (1000 * 60 * 60));
+const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+const segundos = Math.floor((diff % (1000 * 60)) / 1000);
+
+const formatado =
+String(horas).padStart(2,'0') + ":" +
+String(minutos).padStart(2,'0') + ":" +
+String(segundos).padStart(2,'0');
+
+document.getElementById("contadorVirada").innerText =
+"Atualiza em: " + formatado;
+
+}
+
+// atualiza a cada 1 segundo
+setInterval(atualizarContador, 1000);
+atualizarContador();
+
+  function verificarVirada(){
+const agora = new Date();
+
+if(agora.getHours() === 0 && agora.getMinutes() === 0 && agora.getSeconds() === 0){
+location.reload();
+}
+}
+
+setInterval(verificarVirada, 1000);
 // 🔥 EXECUTA DEPOIS QUE A PÁGINA CARREGAR
 window.onload = () => {
 formatarData();
