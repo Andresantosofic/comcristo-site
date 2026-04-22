@@ -186,7 +186,7 @@ console.error("Erro ao carregar devocional:", e);
 }
 
 // 🔥 CONCLUIR DEVOCIONAL
-const hoje = new Date().toISOString().split("T")[0];
+const hoje = new Date().toLocaleDateString("en-CA");
 const chave = "devocional_" + hoje;
 
 const btnConcluir = document.getElementById("btnConcluir");
