@@ -363,11 +363,13 @@ box-shadow:0 10px 25px rgba(0,0,0,0.2);
 
       <h2>Devocional de hoje</h2>
 
-      <div class="titulo-devocional">
-        Amor Sem Pré-condições
-      </div>
+      <div id="tituloDevocional" class="titulo-devocional">
+  Carregando...
+</div>
 
-      <p class="referencia">"Mas Deus prova o seu amor para conosco, em que Cristo morreu por nós, sendo nós ainda pecadores." (Romanos 5:8)</p>
+<p id="referenciaDevocional" class="referencia">
+  ...
+</p>
 
       <a href="devocional.html" class="btn-devocional">
         Ler Devocional
@@ -551,5 +553,74 @@ document.getElementById("mockupSlider").src = mockups[mockupIndex];
 
 <script>
 
-</body>
-</html>
+// animações scroll
+const elements=document.querySelectorAll('.card,.benefit-box,.card-white,.support-box,.social-box');
+function showOnScroll(){
+const trigger=window.innerHeight*0.85;
+elements.forEach(el=>{
+const top=el.getBoundingClientRect().top;
+if(top<trigger){el.classList.add('show');}
+});
+}
+window.addEventListener('scroll',showOnScroll);
+showOnScroll();
+
+// copiar pix
+document.getElementById("copiarPixBtn").addEventListener("click",function(){
+const chave="comcristoapp@gmail.com";
+navigator.clipboard.writeText(chave);
+alert("Chave Pix copiada!");
+});
+
+// slider mockup
+const mockups = [
+"mockup.png",
+"mockup2.png",
+"mockup3.png",
+"mockup4.png"
+];
+
+let mockupIndex = 0;
+
+setInterval(() => {
+mockupIndex++;
+if(mockupIndex >= mockups.length){
+mockupIndex = 0;
+}
+document.getElementById("mockupSlider").src = mockups[mockupIndex];
+},3000);
+
+
+// 🔥 DEVOCIONAL AUTOMÁTICO
+async function carregarDevocional() {
+
+  try {
+
+    const resposta = await fetch("./devocionais.json");
+    const dados = await resposta.json();
+
+    const hoje = new Date().toISOString().split("T")[0];
+
+    let dataHoje = dados[hoje];
+
+    // fallback (se não tiver hoje)
+    if (!dataHoje) {
+      const datas = Object.keys(dados).sort();
+      dataHoje = dados[datas[datas.length - 1]];
+    }
+
+    const dev = dataHoje.devocional;
+
+    document.getElementById("tituloDevocional").innerText = dev.tema;
+    document.getElementById("referenciaDevocional").innerText =
+      `"${dev.versiculo}" (${dev.referencia})`;
+
+  } catch (e) {
+    console.log("Erro ao carregar JSON:", e);
+  }
+
+}
+
+carregarDevocional();
+
+</script>
