@@ -125,6 +125,7 @@ O amor humano geralmente é condicional: amamos quem nos agrada ou quem merece. 
 <div class="titulo">🤔 Reflexão</div>
 <p class="texto">
 Você sente que precisa ser 'bom o suficiente' para que Deus te ame hoje? Como a verdade de que Cristo morreu por você enquanto você ainda era um pecador muda sua confiança em Deus? Você não pode fazer nada para Deus te amar mais, e nada para Ele te amar menos.
+</p>
 </div>
 
 <!-- 4° CARD -->
@@ -186,29 +187,31 @@ btnConcluir.classList.add("concluido");
 // COMPARTILHAR
 document.getElementById("btnCompartilhar").addEventListener("click", () => {
 
-const link = "https://andresantosofic.github.io/comc/devocional.html";
+  const link = "https://andresantosofic.github.io/comc/devocional.html";
 
-const texto = 
-`Devocional do dia
+  // 🔥 PEGANDO DO HTML
+  const titulo = document.querySelector(".titulo").innerText;
+  const referencia = document.querySelectorAll(".texto")[1].innerText;
 
-${titulo} - ${referencia}
+  const texto = 
+`📖 Devocional do dia
 
-Leia no ComCristo:
+${titulo} — ${referencia}
+
+✨ Separe alguns minutos com Deus hoje.
+
+👉 Leia completo:
 ${link}`;
 
-if(navigator.share){
-navigator.share({
-title: "Devocional do dia",
-text: texto
-});
-}else{
-navigator.clipboard.writeText(texto);
-alert("Texto copiado para compartilhar!");
-}
+  if(navigator.share){
+    navigator.share({
+      title: "Devocional do dia",
+      text: texto
+    });
+  } else {
+    window.open(`https://wa.me/?text=${encodeURIComponent(texto)}`, '_blank');
+  }
 
 });
-
-</script>
-
 </body>
 </html>
