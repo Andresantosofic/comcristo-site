@@ -367,9 +367,8 @@ box-shadow:0 10px 25px rgba(0,0,0,0.2);
         Carregando...
       </div>
 
-      <p id="referenciaDevocional" class="referencia">
-        ...
-      </p>
+     <p id="versiculoDevocional" class="referencia"></p>
+<p id="referenciaDevocional" class="referencia"></p>
 
       <a href="devocional.html" class="btn-devocional">
         Ler devocional
@@ -595,9 +594,11 @@ async function carregarDevocional() {
     // 🔥 ATUALIZA A TELA
     document.getElementById("tituloDevocional").innerText = dev.tema;
 
-    document.getElementById("referenciaDevocional").innerText =
-      dev.referencia || dev.versiculo || "";
+    document.getElementById("versiculoDevocional").innerText =
+  dev.versiculo || "";
 
+document.getElementById("referenciaDevocional").innerText =
+  dev.referencia || "";
   } catch (e) {
 
     console.error("ERRO REAL:", e);
