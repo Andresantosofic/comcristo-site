@@ -568,7 +568,7 @@ throw new Error("JSON não encontrado");
 const dados = await resposta.json();
 
 // 🔥 CAMINHO CORRETO DO JSON
-const devocionais = dados.data.devocionais;
+const devocionais = dados;
 
 // 🔥 DATA NO FORMATO CERTO
 const hoje = new Date().toISOString().split("T")[0];
