@@ -577,7 +577,12 @@ async function carregarDevocional() {
     }
 
     // 🔥 DATA ATUAL (formato YYYY-MM-DD)
-    const hoje = new Date().toISOString().split("T")[0];
+    const agora = new Date();
+
+// força horário do Brasil
+const hoje = new Date(agora.getTime() - (agora.getTimezoneOffset() * 60000))
+.toISOString()
+.split("T")[0];
 
     let dataEscolhida = devocionais[hoje];
 
@@ -614,7 +619,7 @@ document.getElementById("referenciaDevocional").innerText =
       "Tente novamente mais tarde";
   }
 }
-  function atualizarContador(){
+function atualizarContador(){
 
 const agora = new Date();
 
@@ -625,20 +630,13 @@ meiaNoite.setHours(24,0,0,0);
 const diff = meiaNoite - agora;
 
 const horas = Math.floor(diff / (1000 * 60 * 60));
-const minutos = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-const segundos = Math.floor((diff % (1000 * 60)) / 1000);
+const minutos = Math.floor((diff / (1000 * 60)) % 60);
+const segundos = Math.floor((diff / 1000) % 60);
 
-const formatado =
-String(horas).padStart(2,'0') + ":" +
-String(minutos).padStart(2,'0') + ":" +
-String(segundos).padStart(2,'0');
-
-document.getElementById("contadorVirada").innerText =
-"Atualiza em: " + formatado;
-
+document.getElementById("contador").innerText =
+`Atualiza em: ${horas.toString().padStart(2,'0')}:${minutos.toString().padStart(2,'0')}:${segundos.toString().padStart(2,'0')}`;
 }
 
-// atualiza a cada 1 segundo
 setInterval(atualizarContador, 1000);
 atualizarContador();
 
