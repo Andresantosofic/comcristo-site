@@ -158,7 +158,8 @@ if(dados.data && dados.data.devocionais){
 devocionais = dados.data.devocionais;
 }
 
-const hoje = new Date().toISOString().split("T")[0];
+// ✅ DATA CORRETA (BRASIL)
+const hoje = new Date().toLocaleDateString("en-CA");
 
 let dataEscolhida = devocionais[hoje];
 
@@ -232,7 +233,7 @@ window.open(`https://wa.me/?text=${encodeURIComponent(texto)}`, '_blank');
 });
 
 // 🔥 INIT
-window.onload = carregarDevocional;
+document.addEventListener("DOMContentLoaded", carregarDevocional);
 
 </script>
 
